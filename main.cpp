@@ -24,15 +24,23 @@ int main(void)
 
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
+	float positions[6]
+	{
+		-0.5f, -0.5f,
+		 0.0f,  0.5f,
+		 0.5f, -0.5f
+	};
+
+	unsigned int buffer;
+	glGenBuffers(1, &buffer);
+	glBindBuffer(GL_ARRAY_BUFFER, buffer);
+	glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW);
+
 	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		glBegin(GL_TRIANGLES);
-		glVertex2d(0.2f, -0.2f);
-		glVertex2d(0.3f, 0.3f);
-		glVertex2d(0.4f, -0.2f);
-		glEnd();
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 		glfwSwapBuffers(window);
 
