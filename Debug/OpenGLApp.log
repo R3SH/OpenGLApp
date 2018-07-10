@@ -1,13 +1,9 @@
-﻿Сборка начата 03.05.2018 6:31:12.
+﻿Сборка начата 10.07.2018 5:49:20.
      1>Проект "H:\C++\OpenGLApp\OpenGLApp.vcxproj" в узле 2 (целевые объекты Build).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IH:\C++\OpenGLApp\GLFW\include /IH:\C++\OpenGLApp\GLEW\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D GLEW_STATIC /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\C++\OpenGLApp\Debug\OpenGLApp.exe" /INCREMENTAL /NOLOGO /LIBPATH:H:\C++\OpenGLApp\\GLFW\lib /LIBPATH:H:\C++\OpenGLApp\GLEW\lib\Release\Win32 glew32s.lib glfw3.lib opengl32.lib User32.lib Gdi32.lib Shell32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\C++\OpenGLApp\Debug\OpenGLApp.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\C++\OpenGLApp\Debug\OpenGLApp.lib" /MACHINE:X86 Debug\main.obj
+     1>Link:
          OpenGLApp.vcxproj -> H:\C++\OpenGLApp\Debug\OpenGLApp.exe
      1>Сборка проекта "H:\C++\OpenGLApp\OpenGLApp.vcxproj" завершена (целевые объекты Build).
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:03.09
+Затраченное время: 00:00:00.23
