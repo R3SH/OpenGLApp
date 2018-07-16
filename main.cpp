@@ -51,13 +51,13 @@ static unsigned int compileShader(unsigned int type, const std::string& source)
 	glCompileShader(id);
 
 	int result;
-	glGetShaderiv(id, GL_COMPILE_STATUS, &result); // 'i' in "glGetShaderiv()" specifies that it an integer, 'v' - vector;
+	glGetShaderiv(id, GL_COMPILE_STATUS, &result);		// 'i' in "glGetShaderiv()" specifies that it an integer, 'v' - vector;
 
-	if (result == GL_FALSE) // == !result;
+	if (result == GL_FALSE)		// == !result;
 	{
 		int length;
 		glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
-		char* message = (char*)alloca(length * sizeof(char)); // TODO: search about "alloca" func;
+		char* message = (char*)alloca(length * sizeof(char));		// TODO: search about "alloca" func;
 		glGetShaderInfoLog(id , length, &length, message);
 		std::cout << "Failed to compile" << (type == GL_VERTEX_SHADER ? " vertex" : " fragment") <<" shader!\n";
 		std::cout << message << std::endl;
@@ -103,24 +103,25 @@ int main(void)
 
 	glfwMakeContextCurrent(window);
 
+	glfwSwapInterval(1);
+
 	if (glewInit() != GLEW_OK)
 		std::cout << "ERROR\n";
 
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
-	float positions[12]
+	float positions[8]
 	{
 		-0.5f, -0.5f,		// 0
 		 0.5f, -0.5f,		// 1
 		 0.5f,  0.5f,		// 2
 		-0.5f,  0.5f		// 3
-
 	};
 
 	unsigned int indices[] =
 	{
 		0, 1, 2,
-		2, 3, 0
+		2, 3, 0,
 	};
 
 	unsigned int buffer;
@@ -140,9 +141,25 @@ int main(void)
 	unsigned int shader = createShader(source.VertexSource, source.FragmentSource);
 	glUseProgram(shader);
 
+	float r = 0.0f;
+	float inc = 0.01f;
+
+	int location = glGetUniformLocation(shader, "u_Color");
+	//ASSERT(location != -1);
+	glUniform4f(location, 0.2f, 0.5f, 0.1f, 1.0f);
+
 	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
+
+		glUniform4f(location, r, 0.5f, 0.1f, 1.0f);
+
+		if (r > 1.0f)
+			inc = -0.01f;
+		else if (r < 0.0f)
+			inc = 0.01f;
+
+		r += inc;
 
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
