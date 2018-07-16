@@ -90,7 +90,12 @@ int main(void)
 {
 	GLFWwindow* window;
 
-	if (!glfwInit()) return -2;
+	if (!glfwInit()) 
+		return -2;
+
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
 
 	window = glfwCreateWindow(640, 480, "Hello world!", NULL, NULL);
 	if (!window)
@@ -124,10 +129,14 @@ int main(void)
 		2, 3, 0,
 	};
 
+	unsigned int vao;		//Vertex Array Object
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
+
 	unsigned int buffer;
 	glGenBuffers(1, &buffer);
 	glBindBuffer(GL_ARRAY_BUFFER, buffer);
-	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(float), positions, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, 8 * sizeof(float), positions, GL_STATIC_DRAW);
 
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
@@ -141,18 +150,30 @@ int main(void)
 	unsigned int shader = createShader(source.VertexSource, source.FragmentSource);
 	glUseProgram(shader);
 
-	float r = 0.0f;
-	float inc = 0.01f;
-
 	int location = glGetUniformLocation(shader, "u_Color");
 	//ASSERT(location != -1);
 	glUniform4f(location, 0.2f, 0.5f, 0.1f, 1.0f);
+
+	glBindVertexArray(0);
+	glUseProgram(0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+	float r = 0.0f;
+	float inc = 0.01f;
 
 	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 
+		glUseProgram(shader);
 		glUniform4f(location, r, 0.5f, 0.1f, 1.0f);
+
+		glBindVertexArray(vao);
+
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
 		if (r > 1.0f)
 			inc = -0.01f;
@@ -160,8 +181,6 @@ int main(void)
 			inc = 0.01f;
 
 		r += inc;
-
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
 		glfwSwapBuffers(window);
 
