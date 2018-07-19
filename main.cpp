@@ -4,6 +4,9 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include "renderer.h"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
 
 struct shaderProgramSource
 {
@@ -58,8 +61,8 @@ static unsigned int compileShader(unsigned int type, const std::string& source)
 		int length;
 		glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
 		char* message = (char*)alloca(length * sizeof(char));		// TODO: search about "alloca" func;
-		glGetShaderInfoLog(id , length, &length, message);
-		std::cout << "Failed to compile" << (type == GL_VERTEX_SHADER ? " vertex" : " fragment") <<" shader!\n";
+		glGetShaderInfoLog(id, length, &length, message);
+		std::cout << "Failed to compile" << (type == GL_VERTEX_SHADER ? " vertex" : " fragment") << " shader!\n";
 		std::cout << message << std::endl;
 
 		glDeleteShader(id);
@@ -90,7 +93,7 @@ int main(void)
 {
 	GLFWwindow* window;
 
-	if (!glfwInit()) 
+	if (!glfwInit())
 		return -2;
 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -114,80 +117,75 @@ int main(void)
 		std::cout << "ERROR\n";
 
 	std::cout << glGetString(GL_VERSION) << std::endl;
-
-	float positions[8]
 	{
-		-0.5f, -0.5f,		// 0
-		 0.5f, -0.5f,		// 1
-		 0.5f,  0.5f,		// 2
-		-0.5f,  0.5f		// 3
-	};
+		float positions[8]
+		{
+			-0.5f, -0.5f,		// 0
+				0.5f, -0.5f,		// 1
+				0.5f, 0.5f,		// 2
+				-0.5f, 0.5f		// 3
+		};
 
-	unsigned int indices[] =
-	{
-		0, 1, 2,
-		2, 3, 0,
-	};
+		unsigned int indices[] =
+		{
+			0, 1, 2,
+			2, 3, 0,
+		};
 
-	unsigned int vao;		//Vertex Array Object
-	glGenVertexArrays(1, &vao);
-	glBindVertexArray(vao);
-
-	unsigned int buffer;
-	glGenBuffers(1, &buffer);
-	glBindBuffer(GL_ARRAY_BUFFER, buffer);
-	glBufferData(GL_ARRAY_BUFFER, 8 * sizeof(float), positions, GL_STATIC_DRAW);
-
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
-
-	unsigned int ibo;		//IndexBufferObject
-	glGenBuffers(1, &ibo);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indices, GL_STATIC_DRAW);
-
-	shaderProgramSource source = parseShader("res/shader/Basic.shader");
-	unsigned int shader = createShader(source.VertexSource, source.FragmentSource);
-	glUseProgram(shader);
-
-	int location = glGetUniformLocation(shader, "u_Color");
-	//ASSERT(location != -1);
-	glUniform4f(location, 0.2f, 0.5f, 0.1f, 1.0f);
-
-	glBindVertexArray(0);
-	glUseProgram(0);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-
-	float r = 0.0f;
-	float inc = 0.01f;
-
-	while (!glfwWindowShouldClose(window))
-	{
-		glClear(GL_COLOR_BUFFER_BIT);
-
-		glUseProgram(shader);
-		glUniform4f(location, r, 0.5f, 0.1f, 1.0f);
-
+		unsigned int vao;		//Vertex Array Object
+		glGenVertexArrays(1, &vao);
 		glBindVertexArray(vao);
 
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+		VertexBuffer vb(positions, 8 * sizeof(float));
 
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
-		if (r > 1.0f)
-			inc = -0.01f;
-		else if (r < 0.0f)
-			inc = 0.01f;
+		IndexBuffer ib(indices, 6);
 
-		r += inc;
+		shaderProgramSource source = parseShader("res/shader/Basic.shader");
+		unsigned int shader = createShader(source.VertexSource, source.FragmentSource);
+		glUseProgram(shader);
 
-		glfwSwapBuffers(window);
+		int location = glGetUniformLocation(shader, "u_Color");
+		//ASSERT(location != -1);
+		glUniform4f(location, 0.2f, 0.5f, 0.1f, 1.0f);
 
-		glfwPollEvents();
+		glBindVertexArray(0);
+		glUseProgram(0);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+		float r = 0.0f;
+		float inc = 0.01f;
+
+		while (!glfwWindowShouldClose(window))
+		{
+			glClear(GL_COLOR_BUFFER_BIT);
+
+			glUseProgram(shader);
+			glUniform4f(location, r, r * 0.5f, 0.5f, 1.0f);
+
+			glBindVertexArray(vao);
+
+			ib.Bind();
+
+			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+
+			if (r > 1.0f)
+				inc = -0.01f;
+			else if (r < 0.0f)
+				inc = 0.01f;
+
+			r += inc;
+
+			glfwSwapBuffers(window);
+
+			glfwPollEvents();
+		}
+
+		glDeleteProgram(shader);
 	}
-
-	glDeleteProgram(shader);
 
 	glfwTerminate();
 
