@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <Windows.h>
 #include "renderer.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
@@ -120,10 +121,10 @@ int main(void)
 	{
 		float positions[8]
 		{
-			-0.5f, -0.5f,		// 0
+			-0.5f, -0.5f,			// 0
 				0.5f, -0.5f,		// 1
-				0.5f, 0.5f,		// 2
-				-0.5f, 0.5f		// 3
+				0.5f, 0.5f,			// 2
+				-0.5f, 0.5f			// 3
 		};
 
 		unsigned int indices[] =
@@ -148,7 +149,7 @@ int main(void)
 		glUseProgram(shader);
 
 		int location = glGetUniformLocation(shader, "u_Color");
-		//ASSERT(location != -1);
+		ASSERT(location != -1);
 		glUniform4f(location, 0.2f, 0.5f, 0.1f, 1.0f);
 
 		glBindVertexArray(0);
@@ -161,6 +162,12 @@ int main(void)
 
 		while (!glfwWindowShouldClose(window))
 		{
+			if (GetAsyncKeyState((unsigned short)VK_ESCAPE) & 0x8000)
+			{
+				std::cout << "Ok, bye!" << std::endl;
+				return 1;
+			}
+
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			glUseProgram(shader);
