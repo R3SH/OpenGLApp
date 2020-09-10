@@ -1,9 +1,2 @@
-﻿Сборка начата 26.07.2018 1:59:42.
-     1>Проект "H:\C++\OpenGLApp\OpenGLApp.vcxproj" в узле 2 (целевые объекты Build).
-     1>Link:
-         OpenGLApp.vcxproj -> H:\C++\OpenGLApp\Debug\OpenGLApp.exe
-     1>Сборка проекта "H:\C++\OpenGLApp\OpenGLApp.vcxproj" завершена (целевые объекты Build).
-
-Сборка успешно завершена.
-
-Затраченное время: 00:00:00.60
+﻿  Shader.cpp
+  OpenGLApp.vcxproj -> C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe
