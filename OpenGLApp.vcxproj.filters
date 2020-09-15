@@ -19,6 +19,12 @@
     <Filter Include="res\shader">
       <UniqueIdentifier>{c89f038f-e41b-4238-b08b-fd571ee818fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы исходного кода\vendor">
+      <UniqueIdentifier>{d518a157-4239-4d35-b0bc-349b788cbe2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\vendor\stb_image">
+      <UniqueIdentifier>{10fe11df-b8ac-42e2-903b-62e22ec86b62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -37,6 +43,12 @@
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Файлы исходного кода\vendor\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,6 +74,15 @@
     <ClInclude Include="Renderer.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="stb_image.h">
+      <Filter>Файлы исходного кода\vendor\stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+>>>>>>> 5b49cfe1426ee622b7e8ef195aca239b84697de9
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shader\Basic.shader">

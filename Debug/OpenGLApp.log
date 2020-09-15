@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  IndexBuffer.cpp
   main.cpp
   Renderer.cpp
@@ -5,4 +6,7 @@
   VertexArray.cpp
   VertexBuffer.cpp
   Generating Code...
+=======
+﻿  main.cpp
+>>>>>>> 5b49cfe1426ee622b7e8ef195aca239b84697de9
   OpenGLApp.vcxproj -> C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe
