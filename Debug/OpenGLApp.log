@@ -1,2 +1,8 @@
-﻿  Shader.cpp
+﻿  IndexBuffer.cpp
+  main.cpp
+  Renderer.cpp
+  Shader.cpp
+  VertexArray.cpp
+  VertexBuffer.cpp
+  Generating Code...
   OpenGLApp.vcxproj -> C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe
