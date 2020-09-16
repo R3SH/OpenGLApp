@@ -1,25 +1,3 @@
-#include "IndexBuffer.h"
-#include "Renderer.h"
-
-IndexBuffer::IndexBuffer(const unsigned int* data, int count)
-	:m_Count(count)
-{
-	GLCall(glGenBuffers(1, &m_RendererID));
-	GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererID));
-	GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(unsigned int), data, GL_STATIC_DRAW));
-}
-
-IndexBuffer::~IndexBuffer()
-{
-
-}
-
-void IndexBuffer::Bind() const
-{
-	GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererID));
-}
-
-void IndexBuffer::Unbind() const
-{
-	GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e7a0b816536eabf68ab7f27055b83e31d3f8e4602e2a48d0df1060ddd671ceff
+size 554

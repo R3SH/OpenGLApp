@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-﻿  IndexBuffer.cpp
-  main.cpp
-  Renderer.cpp
-  Shader.cpp
-  VertexArray.cpp
-  VertexBuffer.cpp
-  Generating Code...
-=======
-﻿  main.cpp
->>>>>>> 5b49cfe1426ee622b7e8ef195aca239b84697de9
-  OpenGLApp.vcxproj -> C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe
+version https://git-lfs.github.com/spec/v1
+oid sha256:0d89c9086428b56354d1e23d777f1918d1e6351628d97c095277a112561b6f2c
+size 102

@@ -1,25 +1,3 @@
-#pragma once
-
-#include <iostream>
-#include <GL/glew.h>
-
-#include "VertexArray.h"
-#include "IndexBuffer.h"
-#include "Shader.h"
-
-#define ASSERT(x) if (!(x)) __debugbreak();
-
-#define GLCall(x) GLClearError();\
-	x;\
-	ASSERT(GLLogCall(#x, __FILE__, __LINE__))
-
-void GLClearError();
-
-bool GLLogCall(const char* function, const char* file, int line);
-
-class Renderer
-{
-public:
-	void Clear() const;
-	void Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const;
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:8ddd6496fdff6baf205db2f19260a4bf833de412b041b795dea1905dcc165f8a
+size 479
