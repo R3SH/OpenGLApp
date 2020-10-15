@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5410d6d024d5d307ddf2b9964e7960bf4b9483e19a930dcdbe7d54931702304f
-size 1453
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGLApp", "OpenGLApp.vcxproj", "{F5DD19F9-179E-45DD-9D3B-41B74AB386F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5DD19F9-179E-45DD-9D3B-41B74AB386F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F5DD19F9-179E-45DD-9D3B-41B74AB386F1}.Debug|Win32.Build.0 = Debug|Win32
+		{F5DD19F9-179E-45DD-9D3B-41B74AB386F1}.Debug|x64.ActiveCfg = Debug|x64
+		{F5DD19F9-179E-45DD-9D3B-41B74AB386F1}.Debug|x64.Build.0 = Debug|x64
+		{F5DD19F9-179E-45DD-9D3B-41B74AB386F1}.Release|Win32.ActiveCfg = Release|Win32
+		{F5DD19F9-179E-45DD-9D3B-41B74AB386F1}.Release|Win32.Build.0 = Release|Win32
+		{F5DD19F9-179E-45DD-9D3B-41B74AB386F1}.Release|x64.ActiveCfg = Release|x64
+		{F5DD19F9-179E-45DD-9D3B-41B74AB386F1}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E8F9F8E-7350-4369-B461-8A3A12BDC661}
+	EndGlobalSection
+EndGlobal
