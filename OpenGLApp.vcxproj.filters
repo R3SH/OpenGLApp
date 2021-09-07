@@ -26,6 +26,9 @@
     <ClCompile Include="TestClearColor.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
