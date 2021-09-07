@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:af921effad09aed7329b481a9f7c7ddabb7a3c2172f2fbef6554739cd4ce87cc
-size 479
+#include "VertexBuffer.h"
+#include "Renderer.h"
+
+VertexBuffer::VertexBuffer(const void* data, int size)
+{
+	GLCall(glGenBuffers(1, &m_RendererID));
+	GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_RendererID));
+	GLCall(glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW));
+}
+
+VertexBuffer::~VertexBuffer()
+{
+
+}
+
+void VertexBuffer::Bind() const
+{
+	GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_RendererID));
+}
+
+void VertexBuffer::Unbind() const
+{
+	GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
+}

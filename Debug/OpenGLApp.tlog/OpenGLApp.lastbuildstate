@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6b69c2fb0f7363b9e2fa91c97605134de1221d9fc3767f518de8770a87660b8e
-size 176
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.25.28610:TargetPlatformVersion=10.0.18362.0:
+Debug|Win32|C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\|

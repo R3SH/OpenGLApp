@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20443142eb3bbc053bf3ff67b21036aea5406ad005d0c1b8510e4df821b27705
-size 188
+#pragma once
+
+class VertexBuffer
+{
+private:
+	unsigned int m_RendererID;
+
+public:
+
+	VertexBuffer(const void* data, int size);
+	~VertexBuffer();
+
+	void Bind() const;
+	void Unbind() const;
+};

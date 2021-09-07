@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6cfbd9e1b561082a83e06d5d81879b351bf72a56e03ef4938268d37a2f86d039
-size 3781
+﻿  IndexBuffer.cpp
+  main.cpp
+  Renderer.cpp
+  Shader.cpp
+  stb_image.cpp
+  Texture.cpp
+  VertexArray.cpp
+  VertexBuffer.cpp
+  Generating Code...
+IndexBuffer.obj : error LNK2001: unresolved external symbol __glewBindBuffer
+VertexBuffer.obj : error LNK2001: unresolved external symbol __glewBindBuffer
+IndexBuffer.obj : error LNK2001: unresolved external symbol __glewBufferData
+VertexBuffer.obj : error LNK2001: unresolved external symbol __glewBufferData
+IndexBuffer.obj : error LNK2001: unresolved external symbol __glewGenBuffers
+VertexBuffer.obj : error LNK2001: unresolved external symbol __glewGenBuffers
+main.obj : error LNK2019: unresolved external symbol glewInit referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwInit referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwTerminate referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwWindowHint referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwCreateWindow referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwWindowShouldClose referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwPollEvents referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwMakeContextCurrent referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwSwapBuffers referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwSwapInterval referenced in function main
+Shader.obj : error LNK2001: unresolved external symbol __glewAttachShader
+Shader.obj : error LNK2001: unresolved external symbol __glewCompileShader
+Shader.obj : error LNK2001: unresolved external symbol __glewCreateProgram
+Shader.obj : error LNK2001: unresolved external symbol __glewCreateShader
+Shader.obj : error LNK2001: unresolved external symbol __glewDeleteProgram
+Shader.obj : error LNK2001: unresolved external symbol __glewDeleteShader
+Shader.obj : error LNK2001: unresolved external symbol __glewGetShaderInfoLog
+Shader.obj : error LNK2001: unresolved external symbol __glewGetShaderiv
+Shader.obj : error LNK2001: unresolved external symbol __glewGetUniformLocation
+Shader.obj : error LNK2001: unresolved external symbol __glewLinkProgram
+Shader.obj : error LNK2001: unresolved external symbol __glewShaderSource
+Shader.obj : error LNK2001: unresolved external symbol __glewUniform1f
+Shader.obj : error LNK2001: unresolved external symbol __glewUniform1i
+Shader.obj : error LNK2001: unresolved external symbol __glewUniform4f
+Shader.obj : error LNK2001: unresolved external symbol __glewUniformMatrix4fv
+Shader.obj : error LNK2001: unresolved external symbol __glewUseProgram
+Shader.obj : error LNK2001: unresolved external symbol __glewValidateProgram
+Texture.obj : error LNK2001: unresolved external symbol __glewActiveTexture
+VertexArray.obj : error LNK2001: unresolved external symbol __glewEnableVertexAttribArray
+VertexArray.obj : error LNK2001: unresolved external symbol __glewVertexAttribPointer
+VertexArray.obj : error LNK2001: unresolved external symbol __glewBindVertexArray
+VertexArray.obj : error LNK2001: unresolved external symbol __glewDeleteVertexArrays
+VertexArray.obj : error LNK2001: unresolved external symbol __glewGenVertexArrays
+C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\GLEW\lib\Release\Win32\glew32s.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\\GLFW\lib\glfw3.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\x64\Debug\OpenGLApp.exe : fatal error LNK1120: 36 unresolved externals

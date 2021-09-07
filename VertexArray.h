@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88e66b8faf9355876ab90b27d699ee14a26fff174efd049ba4a109d8683f56f3
-size 287
+#pragma once
+
+#include "VertexBuffer.h"
+
+class VertexBufferLayout;
+
+class VertexArray
+{
+private:
+	unsigned int m_RendererID;
+public:
+	VertexArray();
+	~VertexArray();
+
+	void AddBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout);
+
+	void Bind() const;
+	void Unbind() const;
+};

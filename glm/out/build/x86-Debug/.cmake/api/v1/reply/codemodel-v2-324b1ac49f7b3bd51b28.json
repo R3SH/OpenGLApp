@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e0ca6f6a8fd8a4ba10031209d86bb5734da0f4c654a0e8f564e8ee4910b03606
-size 540
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"projectIndex" : 0,
+					"source" : "."
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project"
+				}
+			],
+			"targets" : []
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/R3SH/Desktop/Comp.Sci/C++/OpenGLApp/glm/out/build/x86-Debug",
+		"source" : "C:/Users/R3SH/Desktop/Comp.Sci/C++/OpenGLApp/glm"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

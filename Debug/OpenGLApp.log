@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88faaa5fb59f8ec8c65b06244b1c3ce856b0483fdd157cc52fb05c498a49c190
-size 354
+﻿  IndexBuffer.cpp
+  Renderer.cpp
+  Shader.cpp
+  Test.cpp
+  Texture.cpp
+  VertexArray.cpp
+  VertexBuffer.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_glfw_gl3.cpp
+  stb_image.cpp
+  Generating Code...
+  LINK : C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe not found or not built by the last incremental link; performing full link
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\vc120.pdb'; linking object as if no debug info
+  OpenGLApp.vcxproj -> C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe

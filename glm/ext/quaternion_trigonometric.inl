@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d2d0a4c82d4a6f8b4adc1ef1ea35652d9d60169d42f84d598326b4f73974ec0
-size 736
+namespace glm
+{
+	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER T angle(qua<T, Q> const& x)
+	{
+		return acos(x.w) * static_cast<T>(2);
+	}
+
+	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER vec<3, T, Q> axis(qua<T, Q> const& x)
+	{
+		T const tmp1 = static_cast<T>(1) - x.w * x.w;
+		if(tmp1 <= static_cast<T>(0))
+			return vec<3, T, Q>(0, 0, 1);
+		T const tmp2 = static_cast<T>(1) / sqrt(tmp1);
+		return vec<3, T, Q>(x.x * tmp2, x.y * tmp2, x.z * tmp2);
+	}
+
+	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER qua<T, Q> angleAxis(T const& angle, vec<3, T, Q> const& v)
+	{
+		T const a(angle);
+		T const s = glm::sin(a * static_cast<T>(0.5));
+
+		return qua<T, Q>(glm::cos(a * static_cast<T>(0.5)), v * s);
+	}
+}//namespace glm
