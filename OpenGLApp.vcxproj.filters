@@ -23,10 +23,13 @@
     <ClCompile Include="stb_image.cpp">
       <Filter>vendor\glm</Filter>
     </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
     <ClCompile Include="TestClearColor.cpp">
       <Filter>tests</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp">
+    <ClCompile Include="TestPlainTexture.cpp">
       <Filter>tests</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,6 +72,9 @@
       <Filter>tests</Filter>
     </ClInclude>
     <ClInclude Include="TestClearColor.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="TestPlainTexture.h">
       <Filter>tests</Filter>
     </ClInclude>
   </ItemGroup>

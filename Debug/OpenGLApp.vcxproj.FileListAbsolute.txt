@@ -1,2 +1,1 @@
 C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe
-C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.pdb

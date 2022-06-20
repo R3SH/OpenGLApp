@@ -22,6 +22,7 @@
 #include "imgui/imgui_impl_glfw_gl3.h"
 
 #include "TestClearColor.h"
+#include "TestPlainTexture.h"
 
 int main(void)
 {
@@ -67,6 +68,7 @@ int main(void)
 		//TODO add commandline argument test name input
 
 		testMenu->RegisterTest<test::TestClearColor>("Clear Color");
+		testMenu->RegisterTest<test::TestPlainTexture>("Plain Texture");
  
 		while (!glfwWindowShouldClose(window))
 		{
@@ -105,7 +107,7 @@ int main(void)
 		}
 
 		delete currentTest;
-		if (currentTest != testMenu)
+		if (testMenu != nullptr)
 			delete testMenu;
 	}
 
