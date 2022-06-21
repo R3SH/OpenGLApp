@@ -1,0 +1,180 @@
+﻿  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_glfw_gl3.cpp
+  IndexBuffer.cpp
+  main.cpp
+  Renderer.cpp
+  Shader.cpp
+  stb_image.cpp
+  Test.cpp
+  TestClearColor.cpp
+  TestPlainTexture.cpp
+  Texture.cpp
+  VertexArray.cpp
+  VertexBuffer.cpp
+imgui.obj : error LNK2001: unresolved external symbol ___CxxFrameHandler3
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+glfw3.lib(win32_monitor.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+glfw3.lib(monitor.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+glfw3.lib(init.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+glfw3.lib(wgl_context.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+glfw3.lib(egl_context.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+imgui.obj : error LNK2001: unresolved external symbol @__security_check_cookie@4
+glfw3.lib(window.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+glfw3.lib(context.c.obj) : error LNK2001: unresolved external symbol @__security_check_cookie@4
+imgui.obj : error LNK2001: unresolved external symbol __imp__ftell
+imgui.obj : error LNK2001: unresolved external symbol __imp__isprint
+imgui.obj : error LNK2001: unresolved external symbol __Init_thread_epoch
+imgui.obj : error LNK2001: unresolved external symbol __imp__toupper
+imgui.obj : error LNK2001: unresolved external symbol __imp____acrt_iob_func
+imgui.obj : error LNK2001: unresolved external symbol __imp__fflush
+imgui.obj : error LNK2001: unresolved external symbol __imp__fclose
+imgui.obj : error LNK2001: unresolved external symbol __imp__fseek
+imgui.obj : error LNK2001: unresolved external symbol "void __stdcall `eh vector destructor iterator'(void *,unsigned int,unsigned int,void (__thiscall*)(void *))" (??_M@YGXPAXIIP6EX0@Z@Z)
+imgui.obj : error LNK2001: unresolved external symbol __Init_thread_footer
+imgui.obj : error LNK2001: unresolved external symbol _atexit
+msvcprt.lib(locale0_implib.obj) : error LNK2001: unresolved external symbol _atexit
+imgui.obj : error LNK2001: unresolved external symbol "void __cdecl operator delete(void *,unsigned int)" (??3@YAXPAXI@Z)
+msvcprt.lib(locale0_implib.obj) : error LNK2001: unresolved external symbol "void __cdecl operator delete(void *,unsigned int)" (??3@YAXPAXI@Z)
+imgui.obj : error LNK2001: unresolved external symbol __imp____stdio_common_vfprintf
+imgui.obj : error LNK2001: unresolved external symbol __imp__qsort
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol __imp__qsort
+glfw3.lib(monitor.c.obj) : error LNK2001: unresolved external symbol __imp__qsort
+imgui.obj : error LNK2001: unresolved external symbol __imp__strncpy
+imgui.obj : error LNK2001: unresolved external symbol __Init_thread_header
+imgui.obj : error LNK2001: unresolved external symbol __imp__fwrite
+imgui.obj : error LNK2001: unresolved external symbol __imp__GlobalAlloc@8
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp__GlobalAlloc@8
+imgui.obj : error LNK2001: unresolved external symbol __imp___wfopen
+imgui.obj : error LNK2001: unresolved external symbol __imp____stdio_common_vsprintf
+glfw3.lib(init.c.obj) : error LNK2001: unresolved external symbol __imp____stdio_common_vsprintf
+imgui.obj : error LNK2001: unresolved external symbol __Init_thread_abort
+imgui.obj : error LNK2001: unresolved external symbol __imp__GlobalLock@4
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp__GlobalLock@4
+glfw3.lib(win32_monitor.c.obj) : error LNK2001: unresolved external symbol __imp__free
+glfw3.lib(monitor.c.obj) : error LNK2001: unresolved external symbol __imp__free
+glfw3.lib(vulkan.c.obj) : error LNK2001: unresolved external symbol __imp__free
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol __imp__free
+glfw3.lib(wgl_context.c.obj) : error LNK2001: unresolved external symbol __imp__free
+glfw3.lib(egl_context.c.obj) : error LNK2001: unresolved external symbol __imp__free
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol __imp__free
+imgui.obj : error LNK2001: unresolved external symbol __imp__free
+glfw3.lib(input.c.obj) : error LNK2001: unresolved external symbol __imp__free
+glfw3.lib(window.c.obj) : error LNK2001: unresolved external symbol __imp__free
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp__free
+imgui.obj : error LNK2001: unresolved external symbol ___std_terminate
+imgui.obj : error LNK2001: unresolved external symbol _strstr
+imgui.obj : error LNK2001: unresolved external symbol _strchr
+imgui.obj : error LNK2001: unresolved external symbol __imp__fread
+imgui.obj : error LNK2001: unresolved external symbol __imp____stdio_common_vsscanf
+glfw3.lib(context.c.obj) : error LNK2001: unresolved external symbol __imp____stdio_common_vsscanf
+imgui.obj : error LNK2001: unresolved external symbol __imp__GlobalUnlock@4
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp__GlobalUnlock@4
+imgui.obj : error LNK2001: unresolved external symbol __imp___wassert
+imgui.obj : error LNK2001: unresolved external symbol "void __stdcall `eh vector constructor iterator'(void *,unsigned int,unsigned int,void (__thiscall*)(void *),void (__thiscall*)(void *))" (??_L@YGXPAXIIP6EX0@Z1@Z)
+imgui.obj : error LNK2001: unresolved external symbol __imp__malloc
+imgui_demo.obj : error LNK2001: unresolved external symbol ___report_rangecheckfailure
+imgui_demo.obj : error LNK2001: unresolved external symbol __imp__rand
+imgui_demo.obj : error LNK2001: unresolved external symbol __imp__strncmp
+glfw3.lib(context.c.obj) : error LNK2001: unresolved external symbol __imp__strncmp
+glfw3.lib(egl_context.c.obj) : error LNK2001: unresolved external symbol __imp__strncmp
+main.obj : error LNK2001: unresolved external symbol ___std_exception_destroy
+main.obj : error LNK2001: unresolved external symbol "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+msvcprt.lib(locale0_implib.obj) : error LNK2001: unresolved external symbol "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+main.obj : error LNK2001: unresolved external symbol ___std_exception_copy
+main.obj : error LNK2001: unresolved external symbol "const type_info::`vftable'" (??_7type_info@@6B@)
+main.obj : error LNK2001: unresolved external symbol __imp___invalid_parameter_noinfo_noreturn
+Shader.obj : error LNK2001: unresolved external symbol __imp__fputc
+Shader.obj : error LNK2001: unresolved external symbol __imp__fgetc
+Shader.obj : error LNK2001: unresolved external symbol "void __stdcall `eh vector vbase constructor iterator'(void *,unsigned int,unsigned int,void (__thiscall*)(void *),void (__thiscall*)(void *))" (??_N@YGXPAXIIP6EX0@Z1@Z)
+Shader.obj : error LNK2001: unresolved external symbol __imp___unlock_file
+Shader.obj : error LNK2001: unresolved external symbol __imp___lock_file
+Shader.obj : error LNK2001: unresolved external symbol __imp__fgetpos
+Shader.obj : error LNK2001: unresolved external symbol __imp__setvbuf
+Shader.obj : error LNK2001: unresolved external symbol __imp__ungetc
+Shader.obj : error LNK2001: unresolved external symbol __imp__fsetpos
+Shader.obj : error LNK2001: unresolved external symbol __imp___fseeki64
+Shader.obj : error LNK2001: unresolved external symbol __imp___get_stream_buffer_pointers
+stb_image.obj : error LNK2001: unresolved external symbol __imp__ferror
+stb_image.obj : error LNK2001: unresolved external symbol __imp__realloc
+glfw3.lib(win32_monitor.c.obj) : error LNK2001: unresolved external symbol __imp__realloc
+stb_image.obj : error LNK2001: unresolved external symbol __imp__fopen_s
+stb_image.obj : error LNK2001: unresolved external symbol __imp__strtol
+stb_image.obj : error LNK2001: unresolved external symbol __imp__ldexp
+stb_image.obj : error LNK2001: unresolved external symbol __imp__feof
+LINK : error LNK2001: unresolved external symbol _mainCRTStartup
+glfw3.lib(monitor.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(vulkan.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(wgl_context.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(egl_context.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(win32_monitor.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(input.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(window.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol __imp__calloc
+glfw3.lib(input.c.obj) : error LNK2001: unresolved external symbol __dtoul3
+glfw3.lib(input.c.obj) : error LNK2001: unresolved external symbol __ultod3
+glfw3.lib(monitor.c.obj) : error LNK2001: unresolved external symbol __fltused
+glfw3.lib(input.c.obj) : error LNK2001: unresolved external symbol __fltused
+glfw3.lib(window.c.obj) : error LNK2001: unresolved external symbol __fltused
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __fltused
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol __fltused
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol _memset
+glfw3.lib(win32_monitor.c.obj) : error LNK2001: unresolved external symbol _memset
+glfw3.lib(window.c.obj) : error LNK2001: unresolved external symbol _memset
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol _memset
+glfw3.lib(init.c.obj) : error LNK2001: unresolved external symbol _memset
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol _memset
+glfw3.lib(win32_monitor.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(monitor.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(wgl_context.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(egl_context.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(window.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(context.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(init.c.obj) : error LNK2001: unresolved external symbol ___security_cookie
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp___strdup
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol __imp___strdup
+glfw3.lib(monitor.c.obj) : error LNK2001: unresolved external symbol __imp___strdup
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp__GetModuleHandleW@4
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol __imp__GetModuleHandleW@4
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol __imp__GetModuleHandleW@4
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp__GlobalFree@4
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp__MultiByteToWideChar@24
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol __imp__MultiByteToWideChar@24
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __imp__WideCharToMultiByte@32
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol __imp__WideCharToMultiByte@32
+glfw3.lib(win32_monitor.c.obj) : error LNK2001: unresolved external symbol __imp__WideCharToMultiByte@32
+glfw3.lib(win32_window.c.obj) : error LNK2001: unresolved external symbol __dtoui3
+glfw3.lib(context.c.obj) : error LNK2001: unresolved external symbol __imp__strstr
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol __imp__strstr
+glfw3.lib(init.c.obj) : error LNK2001: unresolved external symbol __chkstk
+glfw3.lib(win32_joystick.c.obj) : error LNK2001: unresolved external symbol __libm_sse2_sqrt_precise
+glfw3.lib(win32_time.c.obj) : error LNK2001: unresolved external symbol __imp__QueryPerformanceCounter@4
+glfw3.lib(win32_time.c.obj) : error LNK2001: unresolved external symbol __imp__QueryPerformanceFrequency@4
+glfw3.lib(win32_tls.c.obj) : error LNK2001: unresolved external symbol __imp__TlsAlloc@0
+glfw3.lib(win32_tls.c.obj) : error LNK2001: unresolved external symbol __imp__TlsGetValue@4
+glfw3.lib(win32_tls.c.obj) : error LNK2001: unresolved external symbol __imp__TlsSetValue@8
+glfw3.lib(win32_tls.c.obj) : error LNK2001: unresolved external symbol __imp__TlsFree@4
+glfw3.lib(wgl_context.c.obj) : error LNK2001: unresolved external symbol __imp__GetLastError@0
+glfw3.lib(wgl_context.c.obj) : error LNK2001: unresolved external symbol __imp__FreeLibrary@4
+glfw3.lib(egl_context.c.obj) : error LNK2001: unresolved external symbol __imp__FreeLibrary@4
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol __imp__FreeLibrary@4
+glfw3.lib(vulkan.c.obj) : error LNK2001: unresolved external symbol __imp__FreeLibrary@4
+glfw3.lib(wgl_context.c.obj) : error LNK2001: unresolved external symbol __imp__GetProcAddress@8
+glfw3.lib(egl_context.c.obj) : error LNK2001: unresolved external symbol __imp__GetProcAddress@8
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol __imp__GetProcAddress@8
+glfw3.lib(vulkan.c.obj) : error LNK2001: unresolved external symbol __imp__GetProcAddress@8
+glfw3.lib(wgl_context.c.obj) : error LNK2001: unresolved external symbol __imp__LoadLibraryA@4
+glfw3.lib(egl_context.c.obj) : error LNK2001: unresolved external symbol __imp__LoadLibraryA@4
+glfw3.lib(win32_init.c.obj) : error LNK2001: unresolved external symbol __imp__LoadLibraryA@4
+glfw3.lib(vulkan.c.obj) : error LNK2001: unresolved external symbol __imp__LoadLibraryA@4
+glfw3.lib(monitor.c.obj) : error LNK2001: unresolved external symbol __libm_sse2_pow_precise
+msvcprt.lib(locale0_implib.obj) : error LNK2001: unresolved external symbol ___guard_check_icall_fptr
+C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Release\OpenGLApp.exe : fatal error LNK1120: 87 unresolved externals

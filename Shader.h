@@ -1,7 +1,9 @@
 #pragma once
+#include <iostream>
 #include <string>
 #include <unordered_map>
 #include "glm/glm.hpp"
+#include <GL/glew.h>
 
 struct ShaderProgramSource
 {
@@ -14,7 +16,7 @@ class Shader
 private:
 	std::string m_FilePath;
 	unsigned int m_RendererID;
-	std::unordered_map<std::string, int> m_UniformLocationCache;
+	mutable std::unordered_map<std::string, GLint> m_UniformLocationCache;
 public:
 	Shader(const std::string& filepath);
 	~Shader();
@@ -31,5 +33,5 @@ private:
 	ShaderProgramSource ParseShader(const std::string& filepath);
 	unsigned int CompileShader(unsigned int type, const std::string& source);
 	unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
-	int GetUniformLocation(const std::string& name);
+	GLint GetUniformLocation(const std::string& name) const;
 };

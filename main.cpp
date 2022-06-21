@@ -74,8 +74,11 @@ int main(void)
 		{
 			if (GetAsyncKeyState((unsigned short)VK_ESCAPE) & 0x8000)
 			{
-				std::cout << "Ok, bye!" << std::endl;
-				return 1;
+				std::cout << "Terminating" << std::endl;
+//#ifdef _DEBUG
+//				system("PAUSE");
+//#endif
+				break;
 			}
 
 			GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
@@ -86,7 +89,7 @@ int main(void)
 			{
 				currentTest->OnUpdate(0.0f);
 				currentTest->OnRender();
-				ImGui::Begin("Test");
+				ImGui::Begin("TestsMenu");
 				if (currentTest != testMenu && ImGui::Button("<-"))
 				{
 					delete currentTest;
@@ -106,11 +109,11 @@ int main(void)
 			glfwPollEvents();
 		}
 
-		delete currentTest;
-		if (testMenu != nullptr)
+		if (currentTest == testMenu)
 			delete testMenu;
+		else
+			delete currentTest;
 	}
-
 
 	ImGui_ImplGlfwGL3_Shutdown();
 	ImGui::DestroyContext();
