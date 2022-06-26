@@ -1,2 +1,3 @@
-﻿  main.cpp
+﻿  BatchRenderTest.cpp
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\vc120.pdb'; linking object as if no debug info
   OpenGLApp.vcxproj -> C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe

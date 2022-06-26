@@ -32,6 +32,9 @@
     <ClCompile Include="TestPlainTexture.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="BatchRenderTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
@@ -75,6 +78,9 @@
       <Filter>tests</Filter>
     </ClInclude>
     <ClInclude Include="TestPlainTexture.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="BatchRenderTest.h">
       <Filter>tests</Filter>
     </ClInclude>
   </ItemGroup>
