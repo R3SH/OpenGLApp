@@ -24,6 +24,7 @@
 #include "TestClearColor.h"
 #include "TestPlainTexture.h"
 #include "BatchRenderTest.h"
+#include "BatchColorTest.h"
 
 int main(void)
 {
@@ -71,6 +72,7 @@ int main(void)
 		testMenu->RegisterTest<test::TestClearColor>("Clear Color");
 		testMenu->RegisterTest<test::TestPlainTexture>("Plain Texture");
 		testMenu->RegisterTest<test::BatchRenderTest>("Batch Test");
+		testMenu->RegisterTest<test::BatchColorTest>("BatchColor Test");
  
 		while (!glfwWindowShouldClose(window))
 		{

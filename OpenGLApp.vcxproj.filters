@@ -35,6 +35,9 @@
     <ClCompile Include="BatchRenderTest.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="BatchColorTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
@@ -83,9 +86,13 @@
     <ClInclude Include="BatchRenderTest.h">
       <Filter>tests</Filter>
     </ClInclude>
+    <ClInclude Include="BatchColorTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shader\Basic.shader" />
+    <None Include="res\shaders\Basic.shader" />
+    <None Include="res\shaders\BatchRend.shader" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="vendor">
