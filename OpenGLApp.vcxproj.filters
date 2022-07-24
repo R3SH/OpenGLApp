@@ -38,6 +38,9 @@
     <ClCompile Include="BatchColorTest.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="tests\BatchTextureTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
@@ -87,6 +90,9 @@
       <Filter>tests</Filter>
     </ClInclude>
     <ClInclude Include="BatchColorTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\BatchTextureTest.h">
       <Filter>tests</Filter>
     </ClInclude>
   </ItemGroup>
