@@ -147,8 +147,6 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BatchColorTest.cpp" />
-    <ClCompile Include="BatchRenderTest.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
@@ -158,17 +156,17 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stb_image.cpp" />
-    <ClCompile Include="Test.cpp" />
-    <ClCompile Include="TestClearColor.cpp" />
-    <ClCompile Include="TestPlainTexture.cpp" />
+    <ClCompile Include="tests\BatchColorTest.cpp" />
+    <ClCompile Include="tests\BatchRenderTest.cpp" />
     <ClCompile Include="tests\BatchTextureTest.cpp" />
+    <ClCompile Include="tests\Test.cpp" />
+    <ClCompile Include="tests\TestClearColor.cpp" />
+    <ClCompile Include="tests\TestPlainTexture.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VertexArray.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BatchColorTest.h" />
-    <ClInclude Include="BatchRenderTest.h" />
     <ClInclude Include="GLFW\include\GLFW\glfw3.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
@@ -181,10 +179,12 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
-    <ClInclude Include="Test.h" />
-    <ClInclude Include="TestClearColor.h" />
-    <ClInclude Include="TestPlainTexture.h" />
+    <ClInclude Include="tests\BatchColorTest.h" />
+    <ClInclude Include="tests\BatchRenderTest.h" />
     <ClInclude Include="tests\BatchTextureTest.h" />
+    <ClInclude Include="tests\Test.h" />
+    <ClInclude Include="tests\TestClearColor.h" />
+    <ClInclude Include="tests\TestPlainTexture.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="VertexArray.h" />
     <ClInclude Include="VertexBuffer.h" />

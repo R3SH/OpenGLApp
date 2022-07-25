@@ -23,22 +23,22 @@
     <ClCompile Include="stb_image.cpp">
       <Filter>vendor\glm</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp">
-      <Filter>tests</Filter>
-    </ClCompile>
-    <ClCompile Include="TestClearColor.cpp">
-      <Filter>tests</Filter>
-    </ClCompile>
-    <ClCompile Include="TestPlainTexture.cpp">
-      <Filter>tests</Filter>
-    </ClCompile>
-    <ClCompile Include="BatchRenderTest.cpp">
-      <Filter>tests</Filter>
-    </ClCompile>
-    <ClCompile Include="BatchColorTest.cpp">
-      <Filter>tests</Filter>
-    </ClCompile>
     <ClCompile Include="tests\BatchTextureTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\BatchColorTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\BatchRenderTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\Test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\TestClearColor.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\TestPlainTexture.cpp">
       <Filter>tests</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,22 +77,22 @@
     <ClInclude Include="imgui\stb_truetype.h">
       <Filter>vendor\glm</Filter>
     </ClInclude>
-    <ClInclude Include="Test.h">
-      <Filter>tests</Filter>
-    </ClInclude>
-    <ClInclude Include="TestClearColor.h">
-      <Filter>tests</Filter>
-    </ClInclude>
-    <ClInclude Include="TestPlainTexture.h">
-      <Filter>tests</Filter>
-    </ClInclude>
-    <ClInclude Include="BatchRenderTest.h">
-      <Filter>tests</Filter>
-    </ClInclude>
-    <ClInclude Include="BatchColorTest.h">
-      <Filter>tests</Filter>
-    </ClInclude>
     <ClInclude Include="tests\BatchTextureTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\BatchColorTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\BatchRenderTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\Test.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\TestClearColor.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\TestPlainTexture.h">
       <Filter>tests</Filter>
     </ClInclude>
   </ItemGroup>

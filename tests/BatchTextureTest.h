@@ -4,7 +4,7 @@
 
 #include <memory>
 
-#include "../Test.h"
+#include "Test.h"
 
 #include "../Texture.h"
 #include "../VertexBuffer.h"

@@ -21,10 +21,10 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw_gl3.h"
 
-#include "TestClearColor.h"
-#include "TestPlainTexture.h"
-#include "BatchRenderTest.h"
-#include "BatchColorTest.h"
+#include "tests/TestClearColor.h"
+#include "tests/TestPlainTexture.h"
+#include "tests/BatchRenderTest.h"
+#include "tests/BatchColorTest.h"
 #include "tests/BatchTextureTest.h"
 
 int main(void)
