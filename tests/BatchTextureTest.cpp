@@ -37,11 +37,11 @@ namespace test {
 		m_VertexArray = std::make_unique<VertexArray>();
 		m_VertexBuffer = std::make_unique<VertexBuffer>(positions, 2 * (4 * 10 * sizeof(float)));
 		VertexBufferLayout layout;
-		layout.Push<float>(2);
-		layout.Push<float>(2);
-		layout.Push<float>(3);	//
-		layout.Push<float>(2);	//
-		layout.Push<float>(1);	//
+		//layout.Push<float>(2);
+		//layout.Push<float>(2);
+		//layout.Push<float>(3);	//
+		//layout.Push<float>(2);	//
+		//layout.Push<float>(1);	//
 
 		m_VertexArray->AddBuffer(*m_VertexBuffer, layout);
 		m_IndexBuffer = std::make_unique<IndexBuffer>(indices, 12);		//6
