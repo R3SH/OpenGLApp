@@ -41,6 +41,12 @@
     <ClCompile Include="tests\TestPlainTexture.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="tests\DynamicBatchRenderTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\CoordinateSystemTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
@@ -95,10 +101,23 @@
     <ClInclude Include="tests\TestPlainTexture.h">
       <Filter>tests</Filter>
     </ClInclude>
+    <ClInclude Include="tests\DynamicBatchRenderTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\CoordinateSystemTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shaders\Basic.shader" />
-    <None Include="res\shaders\BatchRend.shader" />
+    <None Include="res\shaders\Basic.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="res\shaders\BatchRend.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="res\shaders\CoordSys.shader">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="vendor">
@@ -112,6 +131,9 @@
     </Filter>
     <Filter Include="tests">
       <UniqueIdentifier>{d2791d70-1af3-4455-bb8d-c9da88f197e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{c324c374-a636-4c1e-898f-996e1792c222}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

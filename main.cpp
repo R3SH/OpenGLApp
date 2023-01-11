@@ -26,6 +26,11 @@
 #include "tests/BatchRenderTest.h"
 #include "tests/BatchColorTest.h"
 #include "tests/BatchTextureTest.h"
+#include "tests/DynamicBatchRenderTest.h"
+#include "tests/CoordinateSystemTest.h"
+
+const unsigned int SCREEN_WIDTH = 960;
+const unsigned int SCREEN_HEIGHT = 540;
 
 int main(void)
 {
@@ -38,7 +43,7 @@ int main(void)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
 
-	window = glfwCreateWindow(960, 540, "Hello world!", NULL, NULL);
+	window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Hello world!", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();
@@ -74,7 +79,8 @@ int main(void)
 		testMenu->RegisterTest<test::TestPlainTexture>("Plain Texture");
 		testMenu->RegisterTest<test::BatchRenderTest>("Batch Test");
 		testMenu->RegisterTest<test::BatchColorTest>("BatchColor Test");
-		testMenu->RegisterTest<test::BatchTextureTest>("BatchTexture Test");
+		testMenu->RegisterTest<test::DynamicBatchRenderTest>("Dynamic Batch Render");
+		testMenu->RegisterTest<test::CoordinateSystemTest>("CoordinateSystem");
  
 		while (!glfwWindowShouldClose(window))
 		{
