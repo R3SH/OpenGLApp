@@ -47,6 +47,9 @@
     <ClCompile Include="tests\CoordinateSystemTest.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="tests\DynamicBatchIB.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
@@ -105,6 +108,9 @@
       <Filter>tests</Filter>
     </ClInclude>
     <ClInclude Include="tests\CoordinateSystemTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\DynamicBatchIB.h">
       <Filter>tests</Filter>
     </ClInclude>
   </ItemGroup>

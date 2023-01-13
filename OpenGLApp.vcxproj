@@ -165,6 +165,7 @@
     <ClCompile Include="tests\BatchRenderTest.cpp" />
     <ClCompile Include="tests\BatchTextureTest.cpp" />
     <ClCompile Include="tests\CoordinateSystemTest.cpp" />
+    <ClCompile Include="tests\DynamicBatchIB.cpp" />
     <ClCompile Include="tests\DynamicBatchRenderTest.cpp" />
     <ClCompile Include="tests\Test.cpp" />
     <ClCompile Include="tests\TestClearColor.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="tests\BatchRenderTest.h" />
     <ClInclude Include="tests\BatchTextureTest.h" />
     <ClInclude Include="tests\CoordinateSystemTest.h" />
+    <ClInclude Include="tests\DynamicBatchIB.h" />
     <ClInclude Include="tests\DynamicBatchRenderTest.h" />
     <ClInclude Include="tests\Test.h" />
     <ClInclude Include="tests\TestClearColor.h" />
