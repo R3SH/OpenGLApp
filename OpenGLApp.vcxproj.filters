@@ -47,7 +47,11 @@
     <ClCompile Include="tests\CoordinateSystemTest.cpp">
       <Filter>tests</Filter>
     </ClCompile>
-    <ClCompile Include="tests\DynamicBatchIB.cpp">
+    <ClCompile Include="tests\DynamicBatchIBTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="BatchRenderer.cpp" />
+    <ClCompile Include="tests\BatchRendererRenderTest.cpp">
       <Filter>tests</Filter>
     </ClCompile>
   </ItemGroup>
@@ -110,7 +114,11 @@
     <ClInclude Include="tests\CoordinateSystemTest.h">
       <Filter>tests</Filter>
     </ClInclude>
-    <ClInclude Include="tests\DynamicBatchIB.h">
+    <ClInclude Include="tests\DynamicBatchIBTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="BatchRenderer.h" />
+    <ClInclude Include="tests\BatchRendererRenderTest.h">
       <Filter>tests</Filter>
     </ClInclude>
   </ItemGroup>
@@ -122,6 +130,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="res\shaders\CoordSys.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="res\shaders\BatchRenderer.shader">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

@@ -15,9 +15,9 @@ uniform mat4 u_MVP;
 void main()
 {
 	v_Color = a_Color;
-	gl_Position = u_MVP * position;
 	v_TexCoord = texCoord;
 	v_TexIndex = a_TexIndex;
+	gl_Position = u_MVP * position;
 };
 
 #shader fragment

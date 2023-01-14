@@ -28,7 +28,8 @@
 #include "tests/BatchTextureTest.h"
 #include "tests/DynamicBatchRenderTest.h"
 #include "tests/CoordinateSystemTest.h"
-#include "tests/DynamicBatchIB.h"
+#include "tests/DynamicBatchIBTest.h"
+#include "tests/BatchRendererRenderTest.h"
 
 const unsigned int SCREEN_WIDTH = 960;
 const unsigned int SCREEN_HEIGHT = 540;
@@ -81,7 +82,8 @@ int main(void)
 		testMenu->RegisterTest<test::BatchRenderTest>("Batch Test");
 		testMenu->RegisterTest<test::BatchColorTest>("BatchColor Test");
 		testMenu->RegisterTest<test::DynamicBatchRenderTest>("Dynamic Batch Render");
-		testMenu->RegisterTest<test::DynamicBatchIB>("Dynamic Batch IB");
+		testMenu->RegisterTest<test::DynamicBatchIBTest>("Dynamic Batch IB");
+		testMenu->RegisterTest<test::BatchRendererRenderTest>("BatchRendererRenderTest");
 		testMenu->RegisterTest<test::CoordinateSystemTest>("CoordinateSystem");
  
 		while (!glfwWindowShouldClose(window))
