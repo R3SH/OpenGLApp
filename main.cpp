@@ -30,6 +30,7 @@
 #include "tests/CoordinateSystemTest.h"
 #include "tests/DynamicBatchIBTest.h"
 #include "tests/BatchRendererRenderTest.h"
+#include "tests/BatchCubeRenderTest.h"
 
 const unsigned int SCREEN_WIDTH = 960;
 const unsigned int SCREEN_HEIGHT = 540;
@@ -84,7 +85,8 @@ int main(void)
 		testMenu->RegisterTest<test::DynamicBatchRenderTest>("Dynamic Batch Render");
 		testMenu->RegisterTest<test::DynamicBatchIBTest>("Dynamic Batch IB");
 		testMenu->RegisterTest<test::BatchRendererRenderTest>("BatchRendererRenderTest");
-		testMenu->RegisterTest<test::CoordinateSystemTest>("CoordinateSystem");
+		testMenu->RegisterTest<test::BatchCubeRenderTest>("BatchCubeRenderTest");
+		//testMenu->RegisterTest<test::CoordinateSystemTest>("CoordinateSystem");
  
 		while (!glfwWindowShouldClose(window))
 		{

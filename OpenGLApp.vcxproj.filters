@@ -54,6 +54,9 @@
     <ClCompile Include="tests\BatchRendererRenderTest.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="tests\BatchCubeRenderTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
@@ -119,6 +122,9 @@
     </ClInclude>
     <ClInclude Include="BatchRenderer.h" />
     <ClInclude Include="tests\BatchRendererRenderTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\BatchCubeRenderTest.h">
       <Filter>tests</Filter>
     </ClInclude>
   </ItemGroup>

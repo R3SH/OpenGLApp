@@ -48,7 +48,7 @@ namespace test {
 		uint32_t indices[MaxIndexCount];
 
 		GLuint m_TextureOne, m_TextureTwo;
-		float m_QOnePos[2] = { -150.0f, -50.0f }, m_QTwoPos[2] = { 50.0f, -50.0f };
+		float m_QOnePos[2] = { -1.0f, -1.0f }, m_QTwoPos[2] = { 0.0f, -0.0f };
     };
 }
 

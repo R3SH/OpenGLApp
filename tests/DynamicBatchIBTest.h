@@ -42,6 +42,8 @@ namespace test {
 
 		GLuint m_TextureOne, m_TextureTwo;
 		float m_QOnePos[2] = { -150.0f, -50.0f }, m_QTwoPos[2] = { 50.0f, -50.0f };
+
+		Renderer renderer;
     };
 
 }

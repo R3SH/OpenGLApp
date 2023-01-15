@@ -175,8 +175,6 @@ namespace test {
 
 		m_IndexBuffer = std::make_unique<IndexBuffer>(indices, indexCount);
 
-		Renderer renderer;
-
 		{
 			//glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
 			glm::mat4 model = glm::translate(glm::mat4(1.0f), m_TranslationA);

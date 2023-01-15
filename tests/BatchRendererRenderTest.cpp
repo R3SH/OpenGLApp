@@ -143,7 +143,7 @@ namespace test {
 		//m_CameraController.OnUpdate(1);
 
 		GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
-		GLCall(glClear(GL_COLOR_BUFFER_BIT));
+		GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
 
 		glUseProgram(m_Shader->GetRendererID());
 
@@ -168,28 +168,34 @@ namespace test {
 		BatchRenderer::ResetStats();
 		BatchRenderer::BeginBatch();
 
-		for (float i = -10.0f; i < 10.0f; i += 0.25f)
-		{
-			for (float j = -10.0f; j < 10.0f; j += 0.25f)
-			{
-				//glm::vec4 color = { (j + 10) / 20.f, 0.2f, (i + 10) / 20.0f, 1.0f };
-				GLuint tex = (int)(i + j) % 2 == 0 ? m_TextureOne : m_TextureTwo;
-				//BatchRenderer::DrawQuad({ i, j }, { 1.0f, 1.0f }, color);
-				BatchRenderer::DrawQuad({ i, j }, { 0.2f, 0.2f }, tex);
-			}
-		}
+		//STMH WRONG IF DRAW COLORED FIRST THEN NO MORE DRAWS
 
-		for (int i = 0; i < 5; ++i)
+		for (float i = 0; i < 5; ++i)
 		{
-			for (int j = 0; j < 5; ++j)
+			for (float j = 0; j < 5; ++j)
 			{
-				GLuint tex = (i + j) % 2 == 0 ? m_TextureOne : m_TextureTwo;
+				GLuint tex = (int)(i + j) % 2 == 0 ? m_TextureOne : m_TextureTwo;
 				BatchRenderer::DrawQuad({ i, j }, { 1.0f, 1.0f }, tex);
 			}
 		}
 
-		BatchRenderer::DrawQuad({ m_QOnePos[0], m_QOnePos[1] }, { 1.0f, 1.0f }, m_TextureOne);
-		BatchRenderer::DrawQuad({ m_QTwoPos[0], m_QTwoPos[1] }, { 1.0f, 1.0f }, m_TextureTwo);
+		BatchRenderer::DrawQuad({ m_QOnePos[0], m_QOnePos[1] }, { 1.0f, 1.0f }, glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
+		
+		for (float i = -10.0f; i < 10.0f; i += 0.25f)
+		{
+			for (float j = -10.0f; j < 10.0f; j += 0.25f)
+			{
+				glm::vec4 color = { (j + 10) / 20.f, 0.2f, (i + 10) / 20.0f, 1.0f };
+				BatchRenderer::DrawQuad({ i, j }, { 0.2f, 0.2f }, color);
+				//GLuint tex = (int)(i + j) % 2 == 0 ? m_TextureOne : m_TextureTwo;
+				//BatchRenderer::DrawQuad({ i, j }, { 0.2f, 0.2f }, tex);
+			}
+		}
+
+		BatchRenderer::DrawQuad({ m_QTwoPos[0], m_QTwoPos[1] }, { 1.0f, 1.0f }, glm::vec4(0.0f, 1.0f, 0.0f, 1.0f));
+		/*BatchRenderer::DrawQuad({ m_QOnePos[0], m_QOnePos[1] }, { 1.0f, 1.0f }, m_TextureOne);
+		BatchRenderer::DrawQuad({ m_QTwoPos[0], m_QTwoPos[1] }, { 1.0f, 1.0f }, m_TextureTwo);*/
+		
 
 		BatchRenderer::Flush();
 	}

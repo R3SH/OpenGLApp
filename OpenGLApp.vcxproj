@@ -167,6 +167,7 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="tests\BatchColorTest.cpp" />
+    <ClCompile Include="tests\BatchCubeRenderTest.cpp" />
     <ClCompile Include="tests\BatchRendererRenderTest.cpp" />
     <ClCompile Include="tests\BatchRenderTest.cpp" />
     <ClCompile Include="tests\BatchTextureTest.cpp" />
@@ -195,6 +196,7 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="tests\BatchColorTest.h" />
+    <ClInclude Include="tests\BatchCubeRenderTest.h" />
     <ClInclude Include="tests\BatchRendererRenderTest.h" />
     <ClInclude Include="tests\BatchRenderTest.h" />
     <ClInclude Include="tests\BatchTextureTest.h" />
