@@ -12,7 +12,12 @@
 
 #include "../stb_image.h"
 
-namespace test {	
+namespace test {
+	Camera m_Camera(glm::vec3(0.0f, 0.0f, 3.0f));
+	float m_LastX = SCR_WIDTH / 2.0f;
+	float m_LastY = SCR_HEIGHT / 2.0f;
+	bool m_FirstMouse;
+
 	static float m_Vertices[] = {
 		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 		 0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
@@ -94,9 +99,6 @@ namespace test {
 	};
 
 	BatchCubeRenderTest::BatchCubeRenderTest()
-		: m_TranslationA(200, 200, 0), m_TranslationB(400, 200, 0),
-		m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))),
-		m_Proj(glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f))
 	{
 		GLCall(glEnable(GL_BLEND));
 		GLCall(glEnable(GL_DEPTH_TEST));
@@ -106,11 +108,6 @@ namespace test {
 		m_VertexBuffer = std::make_unique<VertexBuffer>(nullptr, MaxVertexCount * sizeof(Vertex));
 		VertexBufferLayout layout;
 		m_VertexArray->AddBuffer(*m_VertexBuffer, layout);
-
-		/*unsigned int indices[] = {
-			0, 1, 2, 2, 3, 0,
-			4, 5, 6, 6, 7, 4
-		};*/
 
 		uint32_t offset = 0;
 
@@ -191,6 +188,20 @@ namespace test {
 		return textureID;
 	}
 
+	void BatchCubeRenderTest::Init()
+	{
+		m_LastX = SCR_WIDTH / 2.0f;
+		m_LastY = SCR_HEIGHT / 2.0f;
+		m_FirstMouse = true;
+
+		glfwMakeContextCurrent(m_Window);
+		glfwSetFramebufferSizeCallback(m_Window, framebuffer_size_callback);
+		glfwSetCursorPosCallback(m_Window, mouse_callback);
+		glfwSetScrollCallback(m_Window, scroll_callback);
+
+		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	}
+
 	static Vertex* CreateVertex(Vertex* target, float size, glm::vec3 position, glm::vec2 texCoords, float TextureID)
 	{
 		target->Position = position;
@@ -233,6 +244,10 @@ namespace test {
 
 	void BatchCubeRenderTest::OnUpdate(float deltaTime)
 	{
+		float currentFrame = static_cast<float>(glfwGetTime());
+		m_DeltaTime = currentFrame - m_LastFrame;
+		m_LastFrame = currentFrame;
+		ProcessInput();
 	}
 
 	void BatchCubeRenderTest::OnRender()
@@ -240,26 +255,22 @@ namespace test {
 		GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
 		GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)); // also clear the depth buffer now!
 
-		//glActiveTexture(GL_TEXTURE0);
-		//glBindTexture(GL_TEXTURE_2D, m_TextureOne);
-		//glActiveTexture(GL_TEXTURE1);
-		//glBindTexture(GL_TEXTURE_2D, m_TextureTwo);
-
 		auto texIDLoc = glGetUniformLocation(m_Shader->GetRendererID(), "texIndex");
-		glUniform1f(texIDLoc, m_TextureID);		//1.0f or 2.0f for textured
+		glUniform1f(texIDLoc, m_TextureID);		//1.0f or 2.0f for textured cubes
 
 		glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-		
+		//view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+		const float radius = 10.0f;
+		float camX = sin(glfwGetTime()) * radius;
+		float camZ = cos(glfwGetTime()) * radius;
+		view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+
 		glm::mat4 projection = glm::mat4(1.0f);
 		projection = glm::perspective(glm::radians(45.0f), 960.0f / 540.0f, 0.1f, 100.0f);
-		//projection = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f);
 
 		// pass transformation matrices to the shader
 		m_Shader->SetUniformMat4f("projection", projection); // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
 		m_Shader->SetUniformMat4f("view", view);
-
-		//m_Shader->Bind();
 
 		Renderer renderer;
 		for (unsigned int i = 0; i < 10; i++)
@@ -270,24 +281,71 @@ namespace test {
 			model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
 			m_Shader->SetUniformMat4f("model", model);
 
-
-			/*int modelLoc = glGetUniformLocation(m_Shader->GetRendererID(), "model");
-			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-			auto viewloc = glGetUniformLocation(m_Shader->GetRendererID(), "view");
-			glUniformMatrix4fv(viewloc, 1, GL_FALSE, glm::value_ptr(view));
-			auto projloc = glGetUniformLocation(m_Shader->GetRendererID(), "projection");
-			glUniformMatrix4fv(projloc, 1, GL_FALSE, glm::value_ptr(projection));*/
-
-
-			//renderer.Draw(*m_VertexArray, *m_IndexBuffer, *m_Shader);
 			GLCall(glDrawArrays(GL_TRIANGLES, 0, 36));
 		}
 	}
-
 
 	void BatchCubeRenderTest::OnImGuiRender()
 	{
 		ImGui::InputFloat("TextureID:", &m_TextureID);
 		ImGui::Text("Application Average %.3f ms/frame (%.1f FPS)", 1000 / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+	}
+
+	// glfw: whenever the window size changed (by OS or user resize) this callback function executes
+	// ---------------------------------------------------------------------------------------------
+	void BatchCubeRenderTest::framebuffer_size_callback(GLFWwindow* window, int width, int height)
+	{
+		// make sure the viewport matches the new window dimensions; note that width and 
+		// height will be significantly larger than specified on retina displays.
+		glViewport(0, 0, width, height);
+	}
+
+	// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
+	// ---------------------------------------------------------------------------------------------------------
+	void BatchCubeRenderTest::ProcessInput()
+	{
+		if (glfwGetKey(this->m_Window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+			glfwSetWindowShouldClose(this->m_Window, true);
+
+		if (glfwGetKey(this->m_Window, GLFW_KEY_W) == GLFW_PRESS)
+			m_Camera.ProcessKeyboard(FORWARD, m_DeltaTime);
+		if (glfwGetKey(this->m_Window, GLFW_KEY_S) == GLFW_PRESS)
+			m_Camera.ProcessKeyboard(BACKWARD, m_DeltaTime);
+		if (glfwGetKey(this->m_Window, GLFW_KEY_A) == GLFW_PRESS)
+			m_Camera.ProcessKeyboard(LEFT, m_DeltaTime);
+		if (glfwGetKey(this->m_Window, GLFW_KEY_D) == GLFW_PRESS)
+			m_Camera.ProcessKeyboard(RIGHT, m_DeltaTime);
+		if (glfwGetKey(this->m_Window, GLFW_KEY_SPACE) == GLFW_PRESS)
+			m_TextureID = (float)((int)glfwGetTime() % 3);
+	}
+
+	// glfw: whenever the mouse moves, this callback is called
+	// -------------------------------------------------------
+	void BatchCubeRenderTest::mouse_callback(GLFWwindow* window, double xposIn, double yposIn)
+	{
+		float xpos = static_cast<float>(xposIn);
+		float ypos = static_cast<float>(yposIn);
+
+		if (m_FirstMouse)
+		{
+			m_LastX = xpos;
+			m_LastY = ypos;
+			m_FirstMouse = false;
+		}
+
+		float xoffset = xpos - m_LastX;
+		float yoffset = m_LastY - ypos; // reversed since y-coordinates go from bottom to top
+
+		m_LastX = xpos;
+		m_LastY = ypos;
+
+		m_Camera.ProcessMouseMovement(xoffset, yoffset);
+	}
+
+	// glfw: whenever the mouse scroll wheel scrolls, this callback is called
+	// ----------------------------------------------------------------------
+	void BatchCubeRenderTest::scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+	{
+		m_Camera.ProcessMouseScroll(static_cast<float>(yoffset));
 	}
 }

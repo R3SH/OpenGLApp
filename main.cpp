@@ -106,6 +106,8 @@ int main(void)
 			ImGui_ImplGlfwGL3_NewFrame();
 			if (currentTest)
 			{
+				currentTest->GetWindow(window);
+				currentTest->Init();
 				currentTest->OnUpdate(0.0f);
 				currentTest->OnRender();
 				ImGui::Begin("TestsMenu");
