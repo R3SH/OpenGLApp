@@ -141,6 +141,9 @@
     <None Include="res\shaders\BatchRenderer.shader">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="res\shaders\CubeRender.shader">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="vendor">

@@ -216,6 +216,7 @@
     <None Include="res\shaders\BatchRend.shader" />
     <None Include="res\shaders\BatchRenderer.shader" />
     <None Include="res\shaders\CoordSys.shader" />
+    <None Include="res\shaders\CubeRender.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

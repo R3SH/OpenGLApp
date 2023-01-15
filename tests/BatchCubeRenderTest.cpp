@@ -13,7 +13,7 @@
 #include "../stb_image.h"
 
 namespace test {	
-	static float vertices[] = {
+	static float m_Vertices[] = {
 		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 		 0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
 		 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
@@ -99,6 +99,7 @@ namespace test {
 		m_Proj(glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f))
 	{
 		GLCall(glEnable(GL_BLEND));
+		GLCall(glEnable(GL_DEPTH_TEST));
 		GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
 		m_VertexArray = std::make_unique<VertexArray>();
@@ -128,21 +129,30 @@ namespace test {
 		m_TextureOne = LoadTexture("res/textures/chernoLogo.png");
 		m_TextureTwo = LoadTexture("res/textures/menubg.png");
 
+
+		m_VertexBuffer->Bind();
+		m_VertexBuffer->SetData(&m_Vertices, sizeof(m_Vertices));
 		//Setting up offsets
 		// position attribute
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, Position));
-		// color attribute
+		// texture coord attribute
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, Color));
-		// texture attribute
-		glEnableVertexAttribArray(2);
-		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, TexCoords));
-		//texture index
-		glEnableVertexAttribArray(3);
-		glVertexAttribPointer(3, 1, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, TexID));
+		// position attribute
+		//glEnableVertexAttribArray(0);
+		//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, Position));
+		//// color attribute
+		//glEnableVertexAttribArray(1);
+		//glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, Color));
+		//// texture attribute
+		//glEnableVertexAttribArray(2);
+		//glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, TexCoords));
+		////texture index
+		//glEnableVertexAttribArray(3);
+		//glVertexAttribPointer(3, 1, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, TexID));
 
-		m_Shader = std::make_unique<Shader>("res/shaders/BatchRenderer.shader");
+		m_Shader = std::make_unique<Shader>("res/shaders/CubeRender.shader");
 		m_Shader->Bind();
 
 		glUseProgram(m_Shader->GetRendererID());
@@ -151,6 +161,9 @@ namespace test {
 		for (int i = 0; i < 32; ++i)
 			samplers[i] = i;
 		glUniform1iv(location, 32, samplers);
+
+		glBindTextureUnit(1, m_TextureOne);
+		glBindTextureUnit(2, m_TextureTwo);
 	}
 
 	BatchCubeRenderTest::~BatchCubeRenderTest()
@@ -226,35 +239,14 @@ namespace test {
 	{
 		GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
 		GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)); // also clear the depth buffer now!
-		uint32_t indexCount = 0;
-		std::array<Vertex, 1000> verticies;
-		Vertex* vbuffer = verticies.data();
 
-		/*for (int i = 0; i < 5; ++i)
-		{
-			for (int j = 0; j < 5; ++j)
-			{
-				vbuffer = CreateQuad(vbuffer, 100, j * 100, i * 100, (i + j) % 2 + 1);
-				indexCount += 6;
-			}
-		}*/
+		//glActiveTexture(GL_TEXTURE0);
+		//glBindTexture(GL_TEXTURE_2D, m_TextureOne);
+		//glActiveTexture(GL_TEXTURE1);
+		//glBindTexture(GL_TEXTURE_2D, m_TextureTwo);
 
-		/*for (unsigned int i = 0; i < 36; ++i)
-		{
-			unsigned int j = 0;
-			for (; j < 3; ++j)
-			{
-
-			}
-		}*/
-
-		vbuffer = CreateQuad(vbuffer, 1, m_QOnePos[0], m_QOnePos[1], 2.0f);
-		indexCount += 6;
-
-		m_VertexBuffer->Bind();
-		m_VertexBuffer->SetSubData(verticies.data(), verticies.size() * sizeof(Vertex), 0);
-
-		m_IndexBuffer = std::make_unique<IndexBuffer>(indices, indexCount);
+		auto texIDLoc = glGetUniformLocation(m_Shader->GetRendererID(), "texIndex");
+		glUniform1f(texIDLoc, 0.0f);		//1.0f or 2.0f for textured
 
 		glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
 		//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));	//star wars text inclination
@@ -271,16 +263,11 @@ namespace test {
 		m_Shader->SetUniformMat4f("projection", projection); // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
 		m_Shader->SetUniformMat4f("view", view);
 
+		//m_Shader->Bind();
+
 		Renderer renderer;
 		//for (unsigned int i = 0; i < 10; i++)
 		{
-			//glm::mat4 model = glm::mat4(1.0f);
-			//glm::mat4 model = glm::translate(glm::mat4(1.0f), m_TranslationA);
-			//model = glm::translate(model, cubePositions[i]);
-			//float angle = 20.0f * i;
-			//model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-			//glm::mat4 mvp = m_Proj * m_View * model;
-			m_Shader->Bind();
 			m_Shader->SetUniformMat4f("model", model);
 
 
@@ -292,10 +279,8 @@ namespace test {
 			glUniformMatrix4fv(projloc, 1, GL_FALSE, glm::value_ptr(projection));*/
 
 
-			glBindTextureUnit(1, m_TextureOne);
-			glBindTextureUnit(2, m_TextureTwo);
-
-			renderer.Draw(*m_VertexArray, *m_IndexBuffer, *m_Shader);
+			//renderer.Draw(*m_VertexArray, *m_IndexBuffer, *m_Shader);
+			GLCall(glDrawArrays(GL_TRIANGLES, 0, 36));
 		}
 	}
 
