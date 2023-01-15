@@ -246,11 +246,7 @@ namespace test {
 		//glBindTexture(GL_TEXTURE_2D, m_TextureTwo);
 
 		auto texIDLoc = glGetUniformLocation(m_Shader->GetRendererID(), "texIndex");
-		glUniform1f(texIDLoc, 0.0f);		//1.0f or 2.0f for textured
-
-		glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));	//star wars text inclination
-		model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+		glUniform1f(texIDLoc, m_TextureID);		//1.0f or 2.0f for textured
 
 		glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
 		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
@@ -266,8 +262,12 @@ namespace test {
 		//m_Shader->Bind();
 
 		Renderer renderer;
-		//for (unsigned int i = 0; i < 10; i++)
+		for (unsigned int i = 0; i < 10; i++)
 		{
+			glm::mat4 model = glm::mat4(1.0f);
+			model = glm::translate(model, cubePositions[i]);
+			float angle = 20.0f * i;
+			model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
 			m_Shader->SetUniformMat4f("model", model);
 
 
@@ -287,8 +287,7 @@ namespace test {
 
 	void BatchCubeRenderTest::OnImGuiRender()
 	{
-		ImGui::DragFloat2("Quad0", m_QOnePos);
-		ImGui::DragFloat2("Quad1", m_QTwoPos);
+		ImGui::InputFloat("TextureID:", &m_TextureID);
 		ImGui::Text("Application Average %.3f ms/frame (%.1f FPS)", 1000 / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 	}
 }

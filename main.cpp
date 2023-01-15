@@ -56,6 +56,7 @@ int main(void)
 	glewInit();
 
 	glfwMakeContextCurrent(window);
+	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	glfwSwapInterval(1);
 

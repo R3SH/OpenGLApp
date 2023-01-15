@@ -57,6 +57,7 @@
     <ClCompile Include="tests\BatchCubeRenderTest.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
@@ -127,6 +128,7 @@
     <ClInclude Include="tests\BatchCubeRenderTest.h">
       <Filter>tests</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader">

@@ -9,6 +9,8 @@
 #include "../VertexBuffer.h"
 #include "../VertexBufferLayout.h"
 
+#include "../Camera.h"
+
 //#include <GLCore.h>
 //#include <GLCoreUtils.h>
 
@@ -49,6 +51,7 @@ namespace test {
 
 		GLuint m_TextureOne, m_TextureTwo;
 		float m_QOnePos[2] = { 0.0f, 0.0f }, m_QTwoPos[2] = { 5.0f, -5.0f };
+		float m_TextureID = 0.0f;
 	};
 }
 
