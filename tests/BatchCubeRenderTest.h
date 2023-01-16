@@ -57,7 +57,7 @@ namespace test {
 
 		GLuint m_TextureOne, m_TextureTwo;
 		float m_QOnePos[2] = { 0.0f, 0.0f }, m_QTwoPos[2] = { 5.0f, -5.0f };
-		float m_TextureID = 0.0f;
+		float m_TextureID = 1.0f;
 
 		// timing
 		float m_DeltaTime = 0.0f;	// time between current frame and last frame

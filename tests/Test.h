@@ -6,11 +6,19 @@
 #include <vector>
 #include <functional>
 
+#include "../Camera.h";
+
 namespace test {
 
 	// settings
 	static const unsigned int SCR_WIDTH = 960;
 	static const unsigned int SCR_HEIGHT = 540;
+	
+
+	static Camera m_Camera(glm::vec3(0.0f, 0.0f, 3.0f));
+	static float m_MouseLastX;
+	static float m_MouseLastY;
+	static bool m_FirstMouse;
 
 	class Test
 	{

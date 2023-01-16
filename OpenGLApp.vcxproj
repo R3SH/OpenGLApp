@@ -175,6 +175,7 @@
     <ClCompile Include="tests\CoordinateSystemTest.cpp" />
     <ClCompile Include="tests\DynamicBatchIBTest.cpp" />
     <ClCompile Include="tests\DynamicBatchRenderTest.cpp" />
+    <ClCompile Include="tests\LightingRenderTest.cpp" />
     <ClCompile Include="tests\Test.cpp" />
     <ClCompile Include="tests\TestClearColor.cpp" />
     <ClCompile Include="tests\TestPlainTexture.cpp" />
@@ -205,6 +206,7 @@
     <ClInclude Include="tests\CoordinateSystemTest.h" />
     <ClInclude Include="tests\DynamicBatchIBTest.h" />
     <ClInclude Include="tests\DynamicBatchRenderTest.h" />
+    <ClInclude Include="tests\LightingRenderTest.h" />
     <ClInclude Include="tests\Test.h" />
     <ClInclude Include="tests\TestClearColor.h" />
     <ClInclude Include="tests\TestPlainTexture.h" />
@@ -219,6 +221,8 @@
     <None Include="res\shaders\BatchRenderer.shader" />
     <None Include="res\shaders\CoordSys.shader" />
     <None Include="res\shaders\CubeRender.shader" />
+    <None Include="res\shaders\LightCube.shader" />
+    <None Include="res\shaders\Lighting.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

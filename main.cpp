@@ -31,6 +31,7 @@
 #include "tests/DynamicBatchIBTest.h"
 #include "tests/BatchRendererRenderTest.h"
 #include "tests/BatchCubeRenderTest.h"
+#include "tests/LightingRenderTest.h"
 
 const unsigned int SCREEN_WIDTH = 960;
 const unsigned int SCREEN_HEIGHT = 540;
@@ -87,6 +88,7 @@ int main(void)
 		testMenu->RegisterTest<test::DynamicBatchIBTest>("Dynamic Batch IB");
 		testMenu->RegisterTest<test::BatchRendererRenderTest>("BatchRendererRenderTest");
 		testMenu->RegisterTest<test::BatchCubeRenderTest>("BatchCubeRenderTest");
+		testMenu->RegisterTest<test::LightingRenderTest>("LightingRenderTest");
 		//testMenu->RegisterTest<test::CoordinateSystemTest>("CoordinateSystem");
  
 		while (!glfwWindowShouldClose(window))

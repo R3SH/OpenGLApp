@@ -58,6 +58,9 @@
       <Filter>tests</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="tests\LightingRenderTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
@@ -129,6 +132,9 @@
       <Filter>tests</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="tests\LightingRenderTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader">
@@ -144,6 +150,12 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="res\shaders\CubeRender.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="res\shaders\Lighting.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="res\shaders\LightCube.shader">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
