@@ -90,7 +90,8 @@ int main(void)
 		testMenu->RegisterTest<test::BatchCubeRenderTest>("BatchCubeRenderTest");
 		testMenu->RegisterTest<test::LightingRenderTest>("LightingRenderTest");
 		//testMenu->RegisterTest<test::CoordinateSystemTest>("CoordinateSystem");
- 
+
+
 		while (!glfwWindowShouldClose(window))
 		{
 			if (GetAsyncKeyState((unsigned short)VK_ESCAPE) & 0x8000)
@@ -109,7 +110,7 @@ int main(void)
 			if (currentTest)
 			{
 				currentTest->GetWindow(window);
-				currentTest->Init();
+				//currentTest->Init();
 				currentTest->OnUpdate(0.0f);
 				currentTest->OnRender();
 				ImGui::Begin("TestsMenu");

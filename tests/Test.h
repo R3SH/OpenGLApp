@@ -2,6 +2,7 @@
 
 #include <GLFW/glfw3.h>
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include <functional>
@@ -31,6 +32,7 @@ namespace test {
 		virtual void OnUpdate(float deltaTime) {}
 		virtual void OnRender() {}
 		virtual void OnImGuiRender() {}
+		virtual void ToggleWindowCursor();
 
 		virtual void GetWindow(GLFWwindow* window) { m_Window = window; }
 		

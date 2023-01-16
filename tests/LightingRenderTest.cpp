@@ -120,7 +120,11 @@ namespace test {
 		glBindTextureUnit(1, m_TextureOne);
 		glBindTextureUnit(2, m_TextureTwo);
 
-		m_LightPos = new glm::vec3(1.2f, 1.0f, 2.0f);		
+		m_LightPos = new glm::vec3(1.2f, 1.0f, 2.0f);	
+
+		m_MouseLastX = SCR_WIDTH / 2.0f;
+		m_MouseLastY = SCR_HEIGHT / 2.0f;
+		m_FirstMouse = true;
 	}
 
 	LightingRenderTest::~LightingRenderTest()
@@ -150,16 +154,6 @@ namespace test {
 
 	void LightingRenderTest::Init()
 	{
-		m_MouseLastX = SCR_WIDTH / 2.0f;
-		m_MouseLastY = SCR_HEIGHT / 2.0f;
-		m_FirstMouse = true;
-
-		glfwMakeContextCurrent(m_Window);
-		glfwSetFramebufferSizeCallback(m_Window, framebuffer_size_callback);
-		glfwSetCursorPosCallback(m_Window, mouse_callback);
-		glfwSetScrollCallback(m_Window, scroll_callback);
-
-		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	}
 
 	void LightingRenderTest::OnUpdate(float deltaTime)
@@ -167,6 +161,10 @@ namespace test {
 		float currentFrame = static_cast<float>(glfwGetTime());
 		m_DeltaTime = currentFrame - m_LastFrame;
 		m_LastFrame = currentFrame;
+
+		if (glfwGetInputMode(m_Window, GLFW_CURSOR) != GLFW_CURSOR_NORMAL)
+			glfwSetCursorPosCallback(m_Window, mouse_callback);
+		glfwSetScrollCallback(m_Window, scroll_callback);
 		ProcessInput();
 	}
 
@@ -176,7 +174,6 @@ namespace test {
 		GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)); // also clear the depth buffer now!
 
 		//DONT FORGET TO BIND SHADER EACH FRAME IF MULTIPLE SHADERS
-		m_Shader->Bind();
 
 		auto texIDLoc = glGetUniformLocation(m_Shader->GetRendererID(), "texIndex");
 		glUniform1f(texIDLoc, m_TextureID);		//1.0f or 2.0f for textured cubes
@@ -185,18 +182,22 @@ namespace test {
 
 		glm::mat4 projection = glm::perspective(glm::radians(m_Camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
+		//setting up cubes
+		m_Shader->Bind();
 		// pass transformation matrices to the shader
 		m_Shader->SetUniformMat4f("projection", projection); // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
 		m_Shader->SetUniformMat4f("view", view);
 
 		// don't forget to use the corresponding shader program first (to set the uniform)
-		m_Shader->SetUniformVec3("lightColor", { 1.0f, 1.0f, 1.0f });
-		m_Shader->SetUniformVec3("lightPos", *m_LightPos);
 		m_Shader->SetUniformVec3("viewPos", m_Camera.Position);
 		m_Shader->SetUniformVec3("material.ambient", { 1.0f, 0.5f, 0.31f });
 		m_Shader->SetUniformVec3("material.diffuse", { 1.0f, 0.5f, 0.31f });
 		m_Shader->SetUniformVec3("material.specular", { 0.5f, 0.5f, 0.5f });
 		m_Shader->SetUniform1f("material.shininess", 32.0f);
+		m_Shader->SetUniformVec3("light.position", *m_LightPos);
+		m_Shader->SetUniformVec3("light.ambient", lightAmbient);		//dont want ambient too high for realism
+		m_Shader->SetUniformVec3("light.diffuse", lightDiffuse);		// darken diffuse light a bit
+		m_Shader->SetUniformVec3("light.specular", lightSpecular);		//usually full intensity
 
 
 		glm::mat4 model;
@@ -215,8 +216,10 @@ namespace test {
 
 		//lamp cube
 		m_LightCubeShader->Bind();
+
 		m_LightCubeShader->SetUniformMat4f("projection", projection);
 		m_LightCubeShader->SetUniformMat4f("view", view);
+
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, *m_LightPos);
 		model = glm::scale(model, glm::vec3(0.1f)); // a smaller cube
@@ -226,8 +229,12 @@ namespace test {
 
 	void LightingRenderTest::OnImGuiRender()
 	{
+		ImGui::SliderFloat3("LightAmbient", &lightAmbient.x, 0.0f, 1.0f);
+		ImGui::SliderFloat3("LightDiffuse", &lightDiffuse.x, 0.0f, 1.0f);
+		ImGui::SliderFloat3("LightSpecular", &lightSpecular.x, 0.0f, 1.0f);
 		ImGui::InputFloat("TextureID:", &m_TextureID);
 		ImGui::Text("Application Average %.3f ms/frame (%.1f FPS)", 1000 / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+		ImGui::Text("Press LCTRL to toggle cursor & mouse control");
 	}
 
 	// glfw: whenever the window size changed (by OS or user resize) this callback function executes
@@ -256,6 +263,8 @@ namespace test {
 			m_Camera.ProcessKeyboard(RIGHT, m_DeltaTime);
 		if (glfwGetKey(this->m_Window, GLFW_KEY_SPACE) == GLFW_PRESS)
 			m_TextureID = (float)((int)glfwGetTime() % 3);
+		if(glfwGetKey(this->m_Window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
+			ToggleWindowCursor();
 	}
 
 	// glfw: whenever the mouse moves, this callback is called

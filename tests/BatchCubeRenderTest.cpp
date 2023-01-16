@@ -147,6 +147,10 @@ namespace test {
 
 		glBindTextureUnit(1, m_TextureOne);
 		glBindTextureUnit(2, m_TextureTwo);
+
+		m_MouseLastX = SCR_WIDTH / 2.0f;
+		m_MouseLastY = SCR_HEIGHT / 2.0f;
+		m_FirstMouse = true;
 	}
 
 	BatchCubeRenderTest::~BatchCubeRenderTest()
@@ -176,16 +180,14 @@ namespace test {
 
 	void BatchCubeRenderTest::Init()
 	{
-		m_MouseLastX = SCR_WIDTH / 2.0f;
-		m_MouseLastY = SCR_HEIGHT / 2.0f;
-		m_FirstMouse = true;
 
-		glfwMakeContextCurrent(m_Window);
-		glfwSetFramebufferSizeCallback(m_Window, framebuffer_size_callback);
-		glfwSetCursorPosCallback(m_Window, mouse_callback);
+
+		//glfwMakeContextCurrent(m_Window);
+		//glfwSetFramebufferSizeCallback(m_Window, framebuffer_size_callback);
+		/*glfwSetCursorPosCallback(m_Window, mouse_callback);
 		glfwSetScrollCallback(m_Window, scroll_callback);
 
-		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);*/
 	}
 
 	static Vertex* CreateVertex(Vertex* target, float size, glm::vec3 position, glm::vec2 texCoords, float TextureID)
@@ -233,6 +235,9 @@ namespace test {
 		float currentFrame = static_cast<float>(glfwGetTime());
 		m_DeltaTime = currentFrame - m_LastFrame;
 		m_LastFrame = currentFrame;
+		if (glfwGetInputMode(m_Window, GLFW_CURSOR) != GLFW_CURSOR_NORMAL)
+			glfwSetCursorPosCallback(m_Window, mouse_callback);
+		glfwSetScrollCallback(m_Window, scroll_callback);
 		ProcessInput();
 	}
 
@@ -272,6 +277,7 @@ namespace test {
 	{
 		ImGui::InputFloat("TextureID:", &m_TextureID);
 		ImGui::Text("Application Average %.3f ms/frame (%.1f FPS)", 1000 / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+		ImGui::Text("Press LCTRL to toggle cursor & mouse control");
 	}
 
 	// glfw: whenever the window size changed (by OS or user resize) this callback function executes
@@ -300,6 +306,8 @@ namespace test {
 			m_Camera.ProcessKeyboard(RIGHT, m_DeltaTime);
 		if (glfwGetKey(this->m_Window, GLFW_KEY_SPACE) == GLFW_PRESS)
 			m_TextureID = (float)((int)glfwGetTime() % 3);
+		if (glfwGetKey(this->m_Window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
+			ToggleWindowCursor();
 	}
 
 	// glfw: whenever the mouse moves, this callback is called

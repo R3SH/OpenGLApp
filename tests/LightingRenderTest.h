@@ -56,7 +56,7 @@ namespace test {
 
 		GLuint m_TextureOne, m_TextureTwo;
 		float m_QOnePos[2] = { 0.0f, 0.0f }, m_QTwoPos[2] = { 5.0f, -5.0f };
-		float m_TextureID = 1.0f;
+		float m_TextureID = 0.0f;
 
 		// timing
 		float m_DeltaTime = 0.0f;	// time between current frame and last frame
@@ -67,6 +67,10 @@ namespace test {
 		glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 		glm::vec3* m_LightPos;
+
+		glm::vec3 lightAmbient = { 0.2f, 0.2f, 0.2f };
+		glm::vec3 lightDiffuse = { 0.5f, 0.5f, 0.5f };
+		glm::vec3 lightSpecular = { 1.0f, 1.0f, 1.0f };
 	};
 }
 
