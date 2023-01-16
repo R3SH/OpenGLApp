@@ -190,9 +190,14 @@ namespace test {
 		m_Shader->SetUniformMat4f("view", view);
 
 		// don't forget to use the corresponding shader program first (to set the uniform)
-		m_Shader->SetUniformVec3("objectColor", { 1.0f, 0.5f, 0.31f });
-		m_Shader->SetUniformVec3("lightColor", { 1.0f, 0.5f, 1.0f });
+		m_Shader->SetUniformVec3("lightColor", { 1.0f, 1.0f, 1.0f });
 		m_Shader->SetUniformVec3("lightPos", *m_LightPos);
+		m_Shader->SetUniformVec3("viewPos", m_Camera.Position);
+		m_Shader->SetUniformVec3("material.ambient", { 1.0f, 0.5f, 0.31f });
+		m_Shader->SetUniformVec3("material.diffuse", { 1.0f, 0.5f, 0.31f });
+		m_Shader->SetUniformVec3("material.specular", { 0.5f, 0.5f, 0.5f });
+		m_Shader->SetUniform1f("material.shininess", 32.0f);
+
 
 		glm::mat4 model;
 
@@ -214,7 +219,7 @@ namespace test {
 		m_LightCubeShader->SetUniformMat4f("view", view);
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, *m_LightPos);
-		model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
+		model = glm::scale(model, glm::vec3(0.1f)); // a smaller cube
 		m_LightCubeShader->SetUniformMat4f("model", model);
 		GLCall(glDrawArrays(GL_TRIANGLES, 0, 36));
 	}	
