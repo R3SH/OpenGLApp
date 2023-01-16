@@ -14,47 +14,48 @@
 
 namespace test {
 	static float m_Vertices[] = {
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-		 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-		 0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-		 0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+		//position					color					texCoords		normals
+		-0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 0.0f,	  0.0f,  0.0f, -1.0f,
+		 0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	  0.0f,  0.0f, -1.0f,
+		 0.5f,  0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 1.0f,	  0.0f,  0.0f, -1.0f,
+		 0.5f,  0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 1.0f,	  0.0f,  0.0f, -1.0f,
+		-0.5f,  0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	  0.0f,  0.0f, -1.0f,
+		-0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 0.0f,	  0.0f,  0.0f, -1.0f,
 
-		-0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-		 0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-		-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-		-0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+		-0.5f, -0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 0.0f,	  0.0f,  0.0f, 1.0f,
+		 0.5f, -0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	  0.0f,  0.0f, 1.0f,
+		 0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 1.0f,	  0.0f,  0.0f, 1.0f,
+		 0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 1.0f,	  0.0f,  0.0f, 1.0f,
+		-0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	  0.0f,  0.0f, 1.0f,
+		-0.5f, -0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 0.0f,	  0.0f,  0.0f, 1.0f,
 
-		-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-		-0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-		-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+		-0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	 -1.0f,  0.0f,  0.0f,
+		-0.5f,  0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 1.0f,	 -1.0f,  0.0f,  0.0f,
+		-0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	 -1.0f,  0.0f,  0.0f,
+		-0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	 -1.0f,  0.0f,  0.0f,
+		-0.5f, -0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 0.0f,	 -1.0f,  0.0f,  0.0f,
+		-0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	 -1.0f,  0.0f,  0.0f,
 
-		 0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-		 0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-		 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-		 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-		 0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+		 0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	  1.0f,  0.0f,  0.0f,
+		 0.5f,  0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 1.0f,	  1.0f,  0.0f,  0.0f,
+		 0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	  1.0f,  0.0f,  0.0f,
+		 0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	  1.0f,  0.0f,  0.0f,
+		 0.5f, -0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 0.0f,	  1.0f,  0.0f,  0.0f,
+		 0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	  1.0f,  0.0f,  0.0f,
 
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-		 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-		 0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-		 0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-		-0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-		-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	  0.0f, -1.0f,  0.0f,
+		 0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 1.0f,	  0.0f, -1.0f,  0.0f,
+		 0.5f, -0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	  0.0f, -1.0f,  0.0f,
+		 0.5f, -0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	  0.0f, -1.0f,  0.0f,
+		-0.5f, -0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 0.0f,	  0.0f, -1.0f,  0.0f,
+		-0.5f, -0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	  0.0f, -1.0f,  0.0f,
 
-		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-		 0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-		-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f
+		-0.5f,  0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	  0.0f,  1.0f,  0.0f,
+		 0.5f,  0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 1.0f,	  0.0f,  1.0f,  0.0f,
+		 0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	  0.0f,  1.0f,  0.0f,
+		 0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	1.0f, 0.0f,	  0.0f,  1.0f,  0.0f,
+		-0.5f,  0.5f,  0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 0.0f,	  0.0f,  1.0f,  0.0f,
+		-0.5f,  0.5f, -0.5f,	  0.0f, 1.0f, 0.0f, 1.0f,	0.0f, 1.0f,	  0.0f,  1.0f,  0.0f
 	};
 	// world space positions of our cubes
 	static glm::vec3 cubePositions[] = {
@@ -90,14 +91,17 @@ namespace test {
 
 		//Setting up offsets
 		// position attribute
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
-		//color attrib
-		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(3 * sizeof(float)));
+		// color attrib
+		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)(3 * sizeof(float)));
 		glEnableVertexAttribArray(1);
 		// texture coord attribute
-		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(7 * sizeof(float)));
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)(7 * sizeof(float)));
 		glEnableVertexAttribArray(2);
+		// normals attribute
+		glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)(9 * sizeof(float)));
+		glEnableVertexAttribArray(3);
 
 		//Shaders init
 		m_Shader = std::make_unique<Shader>("res/shaders/Lighting.shader");
@@ -171,6 +175,7 @@ namespace test {
 		GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
 		GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)); // also clear the depth buffer now!
 
+		//DONT FORGET TO BIND SHADER EACH FRAME IF MULTIPLE SHADERS
 		m_Shader->Bind();
 
 		auto texIDLoc = glGetUniformLocation(m_Shader->GetRendererID(), "texIndex");
@@ -186,7 +191,8 @@ namespace test {
 
 		// don't forget to use the corresponding shader program first (to set the uniform)
 		m_Shader->SetUniformVec3("objectColor", { 1.0f, 0.5f, 0.31f });
-		m_Shader->SetUniformVec3("lightColor", { 1.0f, 1.0f, 1.0f });
+		m_Shader->SetUniformVec3("lightColor", { 1.0f, 0.5f, 1.0f });
+		m_Shader->SetUniformVec3("lightPos", *m_LightPos);
 
 		glm::mat4 model;
 
@@ -206,10 +212,10 @@ namespace test {
 		m_LightCubeShader->Bind();
 		m_LightCubeShader->SetUniformMat4f("projection", projection);
 		m_LightCubeShader->SetUniformMat4f("view", view);
-		glm::mat4 lmodel = glm::mat4(1.0f);
-		lmodel = glm::translate(lmodel, *m_LightPos);
-		lmodel = glm::scale(lmodel, glm::vec3(0.2f)); // a smaller cube
-		m_LightCubeShader->SetUniformMat4f("model", lmodel);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, *m_LightPos);
+		model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
+		m_LightCubeShader->SetUniformMat4f("model", model);
 		GLCall(glDrawArrays(GL_TRIANGLES, 0, 36));
 	}	
 
