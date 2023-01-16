@@ -23,7 +23,7 @@ void main()
     gl_Position = projection * view * model * vec4(a_Position, 1.0);
 	v_TexCoord = vec2(a_TexCoord.x, a_TexCoord.y);
 	v_TexIndex = texIndex;
-	v_Normal = a_Normal;
+	v_Normal = mat3(transpose(inverse(model))) * a_Normal;
 	v_FragPos = vec3(model * vec4(a_Position, 1.0));
 }
 
