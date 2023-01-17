@@ -114,6 +114,7 @@ namespace test {
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));	// translate it down so it's at the center of the scene
 		//model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));		// it's a bit too big for our scene, so scale it down
+		m_Shader->SetUniform1f("is_textured", 0.0f);
 		m_Shader->SetUniformMat4f("model", model);
 		m_Model->Draw(*m_Shader);
 
@@ -121,6 +122,7 @@ namespace test {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.5f, 0.0f, 0.0f));	// translate it down so it's at the center of the scene
 		model = glm::scale(model, glm::vec3(0.03f, 0.03f, 0.03f));		// it's a bit too big for our scene, so scale it down
+		m_Shader->SetUniform1f("is_textured", 0.0f);
 		m_Shader->SetUniformMat4f("model", model);
 		m_GlockModel->Draw(*m_Shader);
 
@@ -128,6 +130,7 @@ namespace test {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(1.0f, 0.0f, 0.0f));	// translate it down so it's at the center of the scene
 		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));		// it's a bit too big for our scene, so scale it down
+		m_Shader->SetUniform1f("is_textured", 1.0f);
 		m_Shader->SetUniformMat4f("model", model);
 		m_BackpackModel->Draw(*m_Shader);
 	}

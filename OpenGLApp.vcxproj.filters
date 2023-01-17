@@ -66,6 +66,12 @@
     </ClCompile>
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="tests\BackPackRenderTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\SceneRenderTest.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h" />
@@ -145,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="tests\BackPackRenderTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\SceneRenderTest.h">
+      <Filter>tests</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader">
@@ -169,6 +181,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="res\shaders\ModelRender.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="res\shaders\SceneRender.shader">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
