@@ -61,6 +61,8 @@ namespace test {
 		glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 		Model* m_Model;
+		Model* m_GlockModel;
+		Model* m_BackpackModel;
 	};
 }
 

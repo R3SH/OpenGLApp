@@ -45,9 +45,11 @@ namespace test {
 		char buff[256];
 		_getcwd(buff, 256);
 		std::string modelSrc(buff);
-		modelSrc += "\\res\\models\\AK74M.obj";
+		//modelSrc += "\\res\\models\\AK74M.obj";
 		//modelSrc += "\\res\\models\\AK-74M.blend";
-		m_Model = new Model(modelSrc);
+		m_Model = new Model(modelSrc + "\\res\\models\\AK74M.obj");
+		m_GlockModel = new Model(modelSrc + "\\res\\models\\Glock17\\Glock17.obj");
+		m_BackpackModel = new Model(modelSrc + "\\res\\models\\backpack\\backpack.obj");
 		//m_Model = new Model("res/models/AK74M.obj");
 	}
 
@@ -108,12 +110,26 @@ namespace test {
 		m_Shader->SetUniformMat4f("projection", projection); // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
 		m_Shader->SetUniformMat4f("view", view);
 
-		//rendering loaded model
+		//rendering loaded model AK74M
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));	// translate it down so it's at the center of the scene
 		//model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));		// it's a bit too big for our scene, so scale it down
 		m_Shader->SetUniformMat4f("model", model);
 		m_Model->Draw(*m_Shader);
+
+		//GLOCK17
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.5f, 0.0f, 0.0f));	// translate it down so it's at the center of the scene
+		model = glm::scale(model, glm::vec3(0.03f, 0.03f, 0.03f));		// it's a bit too big for our scene, so scale it down
+		m_Shader->SetUniformMat4f("model", model);
+		m_GlockModel->Draw(*m_Shader);
+
+		//BACKPACK
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(1.0f, 0.0f, 0.0f));	// translate it down so it's at the center of the scene
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));		// it's a bit too big for our scene, so scale it down
+		m_Shader->SetUniformMat4f("model", model);
+		m_BackpackModel->Draw(*m_Shader);
 	}
 
 	void ModelRenderTest::OnImGuiRender()

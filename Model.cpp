@@ -27,7 +27,8 @@ void Model::loadModel(string const& path)
         return;
     }
     // retrieve the directory path of the filepath
-    directory = path.substr(0, path.find_last_of('/'));
+    directory = path.substr(0, path.find_last_of('\\'));
+    //directory = path.substr(0, path.find_last_of('/'));
 
     // process ASSIMP's root node recursively
     processNode(scene->mRootNode, scene);
@@ -173,7 +174,7 @@ vector<MeshTexture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType t
 unsigned int TextureFromFile(const char* path, const string& directory, bool gamma)
 {
     string filename = string(path);
-    filename = directory + '/' + filename;
+    filename = directory + '\\' + filename;
 
     unsigned int textureID;
     glGenTextures(1, &textureID);
