@@ -122,20 +122,21 @@ namespace test {
 		m_Shader->SetUniformMat4f("projection", projection); // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
 		m_Shader->SetUniformMat4f("view", view);
 		
-		m_Shader->SetUniformVec3("objectColor", { 0.3f, 0.3f, 0.3f });
-		m_Shader->SetUniformVec3("lightColor", { 1.0f, 1.0f, 1.0f });
-		m_Shader->SetUniformVec3("lightPos", *m_LightPos);
+
+		m_Shader->SetUniformVec3("viewPos", m_Camera.Position);
+		m_Shader->SetUniformVec3("material.ambient", materialAmbient);
+		m_Shader->SetUniformVec3("material.diffuse", materialDiffuse);
+		m_Shader->SetUniformVec3("material.specular", materialSpecular);
+		m_Shader->SetUniform1f("material.shininess", materialShininess);
+		m_Shader->SetUniformVec3("light.position", *m_LightPos);
+		m_Shader->SetUniformVec3("light.ambient", lightAmbient);		//dont want ambient too high for realism
+		m_Shader->SetUniformVec3("light.diffuse", lightDiffuse);		// darken diffuse light a bit
+		m_Shader->SetUniformVec3("light.specular", lightSpecular);		//usually full intensity
+		//m_Shader->SetUniformVec3("objectColor", { 0.3f, 0.3f, 0.3f });
+		//m_Shader->SetUniformVec3("lightColor", { 1.0f, 1.0f, 1.0f });
+		//m_Shader->SetUniformVec3("lightPos", *m_LightPos);
 
 		glm::mat4 model;
-
-		//rendering loaded model AK74M
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));	// translate it down so it's at the center of the scene
-		//model = glm::translate(model, glm::vec3(-1.0f, -1.0f, 0.0f));
-		////model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));		// it's a bit too big for our scene, so scale it down
-		//m_Shader->SetUniform1f("is_textured", 0.0f);
-		//m_Shader->SetUniformMat4f("model", model);
-		//m_Model->Draw(*m_Shader);
 
 		//GLOCK17
 		model = glm::mat4(1.0f);
@@ -147,9 +148,9 @@ namespace test {
 
 		//GLOCK17 in hands
 		model = glm::mat4(1.0f);
-		m_GlockHandsPos.x = m_Camera.Position.x + 0.1f;
-		m_GlockHandsPos.y = m_Camera.Position.y - 0.1f;
-		m_GlockHandsPos.z = m_Camera.Position.z - 0.1f;
+		m_GlockHandsPos.x = m_Camera.Position.x + 0.05f;
+		m_GlockHandsPos.y = m_Camera.Position.y - 0.08f;
+		m_GlockHandsPos.z = m_Camera.Position.z - 0.15f;
 		model = glm::translate(model, m_GlockHandsPos);
 		model = glm::scale(model, glm::vec3(0.02f, 0.02f, 0.02f));		// it's a bit too big for our scene, so scale it down
 		m_Shader->SetUniformMat4f("model", model);
@@ -167,7 +168,6 @@ namespace test {
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, *m_LightPos);
 		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));		// it's a bit too big for our scene, so scale it down
-		m_Shader->SetUniformVec3("objectColor", { 1.0f, 1.0f, 1.0f });
 		m_Shader->SetUniform1f("is_textured", 0.0f);
 		m_Shader->SetUniformMat4f("model", model);
 		m_LightBulb->Draw(*m_Shader);
@@ -184,10 +184,13 @@ namespace test {
 
 	void SceneRenderTest::OnImGuiRender()
 	{
-		/*ImGui::SliderFloat3("LightAmbient", &lightAmbient.x, 0.0f, 1.0f);
+		ImGui::SliderFloat3("MaterialAmbient", &materialAmbient.x, 0.0f, 1.0f);
+		ImGui::SliderFloat3("MaterialDiffuse", &materialDiffuse.x, 0.0f, 1.0f);
+		ImGui::SliderFloat3("MaterialSpecular", &materialSpecular.x, 0.0f, 1.0f);
+		ImGui::SliderFloat("MaterialShininess", &materialShininess, 1.0f, 256.0f);
+		ImGui::SliderFloat3("LightAmbient", &lightAmbient.x, 0.0f, 1.0f);
 		ImGui::SliderFloat3("LightDiffuse", &lightDiffuse.x, 0.0f, 1.0f);
-		ImGui::SliderFloat3("LightSpecular", &lightSpecular.x, 0.0f, 1.0f);*/
-		ImGui::InputFloat("TextureID:", &m_TextureID);
+		ImGui::SliderFloat3("LightSpecular", &lightSpecular.x, 0.0f, 1.0f);
 		ImGui::Text("Application Average %.3f ms/frame (%.1f FPS)", 1000 / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 		ImGui::Text("Press LCTRL to toggle cursor & mouse control");
 		ImGui::Text("Press SPACE to toggle polygon mode");

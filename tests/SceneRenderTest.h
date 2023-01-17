@@ -61,7 +61,17 @@ namespace test {
 		glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 		glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
+		//Light settings
 		glm::vec3* m_LightPos;
+		glm::vec3 lightAmbient = { 0.2f, 0.2f, 0.2f };
+		glm::vec3 lightDiffuse = { 0.5f, 0.5f, 0.5f };
+		glm::vec3 lightSpecular = { 1.0f, 1.0f, 1.0f };
+
+		//Material settings
+		glm::vec3 materialAmbient = { 1.0f, 0.5f, 0.31f };
+		glm::vec3 materialDiffuse = { 1.0f, 0.5f, 0.31f };
+		glm::vec3 materialSpecular = { 0.5f, 0.5f, 0.5f };
+		float materialShininess = 32.0f;
 
 		Model* m_Model;
 		Model* m_GlockModel;
