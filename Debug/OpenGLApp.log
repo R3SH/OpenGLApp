@@ -1,7 +1,2 @@
-﻿  main.cpp
-  BatchCubeRenderTest.cpp
-  LightingRenderTest.cpp
-  Generating Code...
-  LINK : C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe not found or not built by the last incremental link; performing full link
-glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\vc120.pdb'; linking object as if no debug info
+﻿  ModelRenderTest.cpp
   OpenGLApp.vcxproj -> C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\Debug\OpenGLApp.exe

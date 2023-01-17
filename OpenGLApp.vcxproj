@@ -76,14 +76,14 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\glm;$(SolutionDir)GLFW\include;$(SolutionDir)GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\assimp\assimp_x86-windows\include;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\glm;$(SolutionDir)GLFW\include;$(SolutionDir)GLEW\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLFW_INCLUDE_NONE;GLEW_STATIC;_MBCS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\GLFW\lib;$(SolutionDir)GLEW\lib\Release\Win32;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\OpenGL-Core</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\assimp\assimp_x86-windows\lib;$(SolutionDir)\GLFW\lib;$(SolutionDir)GLEW\lib\Release\Win32;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\OpenGL-Core</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc143-mt.lib;glew32s.lib;glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>MSVCRT.lib;LIBCMT.lib;</IgnoreSpecificDefaultLibraries>
     </Link>
     <ProjectReference>
@@ -95,14 +95,14 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\glm;$(SolutionDir)GLFW\include;$(SolutionDir)GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\assimp\assimp_x86-windows\include;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\glm;$(SolutionDir)GLFW\include;$(SolutionDir)GLEW\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLFW_INCLUDE_NONE;GLEW_STATIC;_MBCS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\GLFW\lib;$(SolutionDir)GLEW\lib\Release\Win32;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\OpenGL-Core</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\assimp\assimp_x86-windows\lib;$(SolutionDir)\GLFW\lib;$(SolutionDir)GLEW\lib\Release\Win32;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\OpenGL-Core</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc143-mt.lib;glew32s.lib;glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>MSVCRT.lib;LIBCMT.lib;</IgnoreSpecificDefaultLibraries>
     </Link>
     <ProjectReference>
@@ -116,7 +116,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\glm;$(SolutionDir)GLFW\include;$(SolutionDir)GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\assimp\assimp_x86-windows\include;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\glm;$(SolutionDir)GLFW\include;$(SolutionDir)GLEW\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLFW_INCLUDE_NONE;GLEW_STATIC;_MBCS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -124,8 +124,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)\GLFW\lib;$(SolutionDir)GLEW\lib\Release\Win32;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\OpenGL-Core</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\assimp\assimp_x86-windows\lib;$(SolutionDir)\GLFW\lib;$(SolutionDir)GLEW\lib\Release\Win32;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\OpenGL-Core</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc143-mt.lib;glew32s.lib;glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>MSVCRT.lib;LIBCMT.lib;</IgnoreSpecificDefaultLibraries>
     </Link>
     <ProjectReference>
@@ -139,7 +139,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\glm;$(SolutionDir)GLFW\include;$(SolutionDir)GLEW\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\assimp\assimp_x86-windows\include;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\glm;$(SolutionDir)GLFW\include;$(SolutionDir)GLEW\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLFW_INCLUDE_NONE;GLEW_STATIC;_MBCS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -147,8 +147,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)\GLFW\lib;$(SolutionDir)GLEW\lib\Release\Win32;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\OpenGL-Core</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\assimp\assimp_x86-windows\lib;$(SolutionDir)\GLFW\lib;$(SolutionDir)GLEW\lib\Release\Win32;C:\Users\R3SH\Desktop\Comp.Sci\C++\OpenGLApp\OpenGL-Core</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc143-mt.lib;glew32s.lib;glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>MSVCRT.lib;LIBCMT.lib;</IgnoreSpecificDefaultLibraries>
     </Link>
     <ProjectReference>
@@ -164,6 +164,8 @@
     <ClCompile Include="imgui\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stb_image.cpp" />
@@ -176,6 +178,7 @@
     <ClCompile Include="tests\DynamicBatchIBTest.cpp" />
     <ClCompile Include="tests\DynamicBatchRenderTest.cpp" />
     <ClCompile Include="tests\LightingRenderTest.cpp" />
+    <ClCompile Include="tests\ModelRenderTest.cpp" />
     <ClCompile Include="tests\Test.cpp" />
     <ClCompile Include="tests\TestClearColor.cpp" />
     <ClCompile Include="tests\TestPlainTexture.cpp" />
@@ -195,6 +198,8 @@
     <ClInclude Include="imgui\stb_textedit.h" />
     <ClInclude Include="imgui\stb_truetype.h" />
     <ClInclude Include="IndexBuffer.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
@@ -207,6 +212,7 @@
     <ClInclude Include="tests\DynamicBatchIBTest.h" />
     <ClInclude Include="tests\DynamicBatchRenderTest.h" />
     <ClInclude Include="tests\LightingRenderTest.h" />
+    <ClInclude Include="tests\ModelRenderTest.h" />
     <ClInclude Include="tests\Test.h" />
     <ClInclude Include="tests\TestClearColor.h" />
     <ClInclude Include="tests\TestPlainTexture.h" />
@@ -223,6 +229,7 @@
     <None Include="res\shaders\CubeRender.shader" />
     <None Include="res\shaders\LightCube.shader" />
     <None Include="res\shaders\Lighting.shader" />
+    <None Include="res\shaders\ModelRender.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

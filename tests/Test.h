@@ -33,6 +33,7 @@ namespace test {
 		virtual void OnRender() {}
 		virtual void OnImGuiRender() {}
 		virtual void ToggleWindowCursor();
+		virtual void TogglePolygonMode();
 
 		virtual void GetWindow(GLFWwindow* window) { m_Window = window; }
 		

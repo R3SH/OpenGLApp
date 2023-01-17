@@ -16,6 +16,19 @@ namespace test {
 			glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	}
 
+	void Test::TogglePolygonMode()
+	{
+		static GLint polygonMode;
+		glGetIntegerv(GL_POLYGON_MODE, &polygonMode);
+		if(polygonMode == GL_FILL)
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);		// draw in wireframe
+		else if(polygonMode == GL_LINE)
+			glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);		// draw in points
+		else
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);		// draw normally
+
+	}
+
 	test::TestMenu::TestMenu(Test*& currentTestPointer)
 		: m_CurrentTest(currentTestPointer)
 	{
